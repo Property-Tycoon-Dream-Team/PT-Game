@@ -8,21 +8,12 @@ public class Player
     int playerId;
     int position;
     string playerName;
-    bool banker;
-    bool jailed;
-    Card[] cardInventory;
+    bool ai;
+    public bool jailed;
+    int jailCards;
     int cash;
     BoardTile[] ownedProperties;
     BoardTile[] mortgagedProperties;
-    int numOfTilesMoved;
-
-    void setJailStatus()
-    {
-
-    }
-
-    void setNumOfTilesMoved()
-    {
-
-    }
+    public int numOfTilesMoved;
+    bool bankrupt;
 }

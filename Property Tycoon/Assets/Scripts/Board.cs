@@ -8,6 +8,7 @@ static public class Board
 
     static PropertyInfo[] getColouredProperties(propColour pc)
     {
+        // Return all properties of colour pc
         return null;
     }
 }
