@@ -20,8 +20,7 @@ public class PropertyInfo
 
     Player getOwner()
     {
-        // Return the owner of this property
-        return null;
+        return owner;
     }
 
     int getCost()
