@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     Player[] players;
     Player activePlayer;
     public int freeParkingValue;
+    public GameObject canvas;
+    public GameObject menuCam;
+    public GameObject mainCam;
+    public Dropdown gamemodeChooser;
+    public InputField timeInput;
+    float timeLeft;
     CardStack cardStack;
     int doubleTracker = 0;
+    gameType gamemode;
 
     int rollDice(bool track)
     {
@@ -20,8 +28,41 @@ public class GameManager : MonoBehaviour
         return dice.value;
     }
 
-    void startGame()
+    public void onDropdownChange()
     {
+        if (gamemodeChooser.value == 1)
+        {
+            timeInput.gameObject.SetActive(true);
+        }
+        else
+        {
+            timeInput.gameObject.SetActive(false);
+        }
+    }
+
+    public void startGame()
+    {
+        canvas.SetActive(false);
+        mainCam.SetActive(true);
+        menuCam.SetActive(false);
+
+        if (gamemodeChooser.value == 0)
+        {
+            gamemode = gameType.STANDARD;
+        } 
+        else if (gamemodeChooser.value == 1)
+        {
+            gamemode = gameType.TIMED;
+            if (!float.TryParse(timeInput.text, out timeLeft) || timeLeft < 30f)
+            {
+                timeLeft = 30f;
+            }
+        }
+        else if (gamemodeChooser.value == 2)
+        {
+            gamemode = gameType.HORROR;
+        }
+
         playerSetup();
         // Set up board and properties
         // Set up card decks
