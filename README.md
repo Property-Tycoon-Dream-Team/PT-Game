@@ -1,4 +1,4 @@
-# PT-Game
+# PT-Game Team 16
 Watson Games are a company that produces a range of traditional board games. You have been 
 appointed as a software contractor to develop a computer game version of their most popular title 
 Property Tycoon, a property trading game similar to the classic Monopoly. Watson Games have 
