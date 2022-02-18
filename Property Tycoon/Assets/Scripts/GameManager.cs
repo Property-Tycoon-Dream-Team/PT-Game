@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    Player[] players;
-    Player activePlayer;
+
     public int freeParkingValue;
     public GameObject canvas;
     public GameObject menuCam;
     public GameObject mainCam;
     public Dropdown gamemodeChooser;
     public InputField timeInput;
+    public Piece[] pieces;
+    Player[] players;
+    Player activePlayer;
     float timeLeft;
     CardStack cardStack;
     int doubleTracker = 0;
