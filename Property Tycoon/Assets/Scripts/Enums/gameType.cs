@@ -1,6 +1,6 @@
 enum gameType
 {
-    STANDARD,
-    TIMED,
-    HORROR
+    STANDARD = 0,
+    TIMED = 1,
+    HORROR = 2
 }

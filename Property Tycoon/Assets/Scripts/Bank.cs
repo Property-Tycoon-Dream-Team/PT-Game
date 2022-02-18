@@ -4,7 +4,8 @@ using UnityEngine;
 
 static public class Bank
 {
-    static int money 
+    static int money = 50000;
+    static public int Money
     {
         get
         {
@@ -12,10 +13,9 @@ static public class Bank
         }
         set
         {
-            // Josh double check this get/set logic you pillock
             if (value <= 1000)
             {
-                value = 50000;
+                money = 50000;
             }
         }
     }

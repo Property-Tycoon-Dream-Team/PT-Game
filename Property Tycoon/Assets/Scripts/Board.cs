@@ -6,6 +6,12 @@ static public class Board
 {
     static BoardTile[] boardSquares;
 
+    /*
+     * Function: getColouredProperties
+     * Parameters: propColour pc - colour of properties to retrieve 
+     * Returns: PropertyInfo array containing all the properties of colour 'pc'
+     * Purpose: used to generate random dice roll and track number of doubles rolled
+     */
     static PropertyInfo[] getColouredProperties(propColour pc)
     {
         // Return all properties of colour pc
