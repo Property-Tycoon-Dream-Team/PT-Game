@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,14 +10,141 @@ public class GameManager : MonoBehaviour
     public GameObject menuCam;
     public GameObject mainCam;
     public Dropdown gamemodeChooser;
+    public Slider playerSlider;
     public InputField timeInput;
+    public GameObject pieceErrorText;
+    public GameObject nameErrorText;
+    public Button startBtn;
     public Piece[] pieces;
-    Player[] players;
-    Player activePlayer;
-    float timeLeft;
-    CardStack cardStack;
-    int doubleTracker = 0;
-    gameType gamemode;
+    public GameObject[] playerInfoEntry;
+
+    private Player[] players;
+    private Player activePlayer;
+    private float timeLeft;
+    private CardStack cardStack;
+    private int doubleTracker = 0;
+    private gameType gamemode;
+
+    /*
+     * Function: Start (MonoBehavior function - called when script instantiated)
+     * Parameters: N/A 
+     * Returns: N/A  
+     * Purpose: runs like a class constructor
+     */
+    private void Start()
+    {
+        setPieceOptions(null);
+    }
+
+    /*
+     * Function: setPieceOptions
+     * Parameters: N/A 
+     * Returns: N/A  
+     * Purpose: sets the piece options dropdowns to the names of the pieces
+     */
+    private void setPieceOptions(GameObject exclude)
+    {
+        foreach (GameObject infoEntry in playerInfoEntry)
+        {
+            List<string> options = new List<string>();
+            foreach (Piece piece in pieces)
+            {
+                options.Add(piece.pieceName);
+            }
+
+            Dropdown dd = infoEntry.transform.GetChild(0).GetComponent<Dropdown>();
+            dd.AddOptions(options);
+        }
+    }
+
+    /*
+     * Function: countActiveDropdowns
+     * Parameters: N/A 
+     * Returns: integer value 
+     * Purpose: returns the amount active dropdowns (players)
+     */
+    private int countActiveDropdowns()
+    {
+        int count = 0;
+        foreach (GameObject dd in playerInfoEntry)
+        {
+            if (dd.activeSelf)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /*
+     * Function: onPlayerInfoChange
+     * Parameters: N/A
+     * Returns: N/A
+     * Purpose: called when input boxes or dropdown is changed when choosing player names and pieces
+     */
+    public void onPlayerInfoChange()
+    {
+        if (countActiveDropdowns() > 1)
+        {
+            bool pieceUnique = true;
+            bool nameUnique = true;
+            foreach (GameObject info1 in playerInfoEntry)
+            {
+                foreach (GameObject info2 in playerInfoEntry)
+                {
+                    if (info1.activeInHierarchy && info2.activeInHierarchy && info1 != info2)
+                    {
+                        Dropdown dropdown1 = info1.transform.GetChild(0).GetComponent<Dropdown>();
+                        Dropdown dropdown2 = info2.transform.GetChild(0).GetComponent<Dropdown>();
+
+                        string text1 = info1.transform.GetChild(1).GetComponent<InputField>().text;
+                        string text2 = info2.transform.GetChild(1).GetComponent<InputField>().text;
+
+                        if (dropdown1.value == dropdown2.value)
+                        {
+                            pieceUnique = false;
+                        }
+
+                        if (text1 == text2)
+                        {
+                            nameUnique = false;
+                        }
+                    }
+                }
+            }
+
+            if (!pieceUnique)
+            {
+                pieceErrorText.SetActive(true);
+                startBtn.interactable = false;
+            }
+            else
+            {
+                pieceErrorText.SetActive(false);
+            }
+
+            if (!nameUnique)
+            {
+                nameErrorText.SetActive(true);
+                startBtn.interactable = false;
+            }
+            else
+            {
+                nameErrorText.SetActive(false);
+            }
+
+            if (pieceUnique && nameUnique)
+            {
+                startBtn.interactable = true;
+            }
+        }
+        else
+        {
+            pieceErrorText.SetActive(false);
+            nameErrorText.SetActive(false);
+            startBtn.interactable = true;
+        }
+    }
 
     /*
      * Function: rollDice
@@ -42,7 +168,7 @@ public class GameManager : MonoBehaviour
      * Returns: N/A
      * Purpose: toggled the timer input for the custom timed gamemode
      */
-    public void onDropdownChange()
+    public void onGamemodeDropdownChange()
     {
         if (gamemodeChooser.value == 1)
         {
@@ -52,6 +178,28 @@ public class GameManager : MonoBehaviour
         {
             timeInput.gameObject.SetActive(false);
         }
+    }
+
+    /*
+     * Function: onSliderChange
+     * Parameters: N/A 
+     * Returns: N/A
+     * Purpose: handles the player slider change
+     */
+    public void onSliderChange()
+    {
+        for (int i = 1; i < playerInfoEntry.Length; i++)
+        {
+            if (i < playerSlider.value)
+            {
+                playerInfoEntry[i].SetActive(true);
+            }
+            else
+            {
+                playerInfoEntry[i].SetActive(false);
+            }
+        }
+        onPlayerInfoChange();
     }
 
     /*
@@ -66,7 +214,7 @@ public class GameManager : MonoBehaviour
         mainCam.SetActive(true);
         menuCam.SetActive(false);
 
-        gamemode = (gameType) gamemodeChooser.value;
+        gamemode = (gameType)gamemodeChooser.value;
 
         if (gamemodeChooser.value == 1)
         {
@@ -110,12 +258,66 @@ public class GameManager : MonoBehaviour
      */
     void playerSetup()
     {
-        //In menu:
-        //  Get amount of players
-        //  Get players to choose pieces & names
-        //  Add AI player (banker) and Bchoose last piece (or random piece if multiple available)
-        //  Get players to roll dice to choose order
-        //  Give all players 1500£
+        players = new Player[countActiveDropdowns() + 1];
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (i < players.Length - 1)
+            {
+                players[i] = new Player();
+                players[i].playerName = playerInfoEntry[i].transform.GetChild(1).GetComponent<InputField>().text;
+
+                Piece assignedPiece = pieces[playerInfoEntry[i].transform.GetChild(0).GetComponent<Dropdown>().value];
+                assignedPiece.chosen = true;
+                players[i].gamePiece = assignedPiece;
+
+                players[i].cash = 1500;
+            }
+            else
+            {
+                players[players.Length - 1] = new Player();
+                players[players.Length - 1].playerName = "Bossman (AI Banker)";
+
+                Piece assignedPiece = findSparePiece();
+                assignedPiece.chosen = true;
+                players[i].gamePiece = assignedPiece;
+
+                players[players.Length - 1].cash = 1500;
+            }
+        }
+        prettyDebugPlayers();
+    }
+
+    /*
+     * Function: prettyDebugPlayers
+     * Parameters: N/A 
+     * Returns: N/A 
+     * Purpose: prints to the console player information
+     */
+    private void prettyDebugPlayers()
+    {
+        foreach (Player player in players)
+        {
+            Debug.Log(player.playerName + " - " + player.gamePiece.pieceName + " - " + player.cash + "\n");
+        }
+    }
+
+    /*
+     * Function: findSparePiece
+     * Parameters: N/A 
+     * Returns: Piece instance
+     * Purpose: returns a piece that hasn't been chosen yet
+     */
+    private Piece findSparePiece()
+    {
+        foreach (Piece piece in pieces)
+        {
+            if (!piece.chosen)
+            {
+                return piece;
+            }
+        }
+        return null;
     }
 
     /*

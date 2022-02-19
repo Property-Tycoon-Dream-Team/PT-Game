@@ -5,13 +5,12 @@ using UnityEngine;
 public class Player
 {
     public Piece gamePiece;
-    int playerId;
     int position;
-    string playerName;
-    bool ai;
+    public string playerName;
+    public bool ai;
     public bool jailed;
     int jailCards;
-    int cash;
+    public int cash;
     BoardTile[] ownedProperties;
     BoardTile[] mortgagedProperties;
     public int numOfTilesMoved;

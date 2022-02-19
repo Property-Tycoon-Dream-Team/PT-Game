@@ -5,5 +5,5 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public string pieceName;
-    bool chosen = false;
+    public bool chosen;
 }
