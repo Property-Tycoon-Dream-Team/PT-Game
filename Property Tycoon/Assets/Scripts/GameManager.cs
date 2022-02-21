@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     private Player[] players;
     private Player activePlayer;
     private float timeLeft;
-    private CardStack cardStack;
+    private CardStack potLuckStack;
+    private CardStack opportunityStack;
     private int doubleTracker = 0;
     private gameType gamemode;
 
