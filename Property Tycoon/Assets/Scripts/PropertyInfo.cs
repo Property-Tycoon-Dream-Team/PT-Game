@@ -67,7 +67,7 @@ public class PropertyInfo
     int getNumOfHouse()
     {
         // Return num of houses on this property
-        return 0;
+        return numOfHouse;
     }
 
     /*
