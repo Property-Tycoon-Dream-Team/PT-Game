@@ -266,6 +266,7 @@ public class GameManager : MonoBehaviour
             {
                 players[i] = new Player();
                 players[i].playerName = playerInfoEntry[i].transform.GetChild(1).GetComponent<InputField>().text;
+                players[i].ai = false;
 
                 Piece assignedPiece = pieces[playerInfoEntry[i].transform.GetChild(0).GetComponent<Dropdown>().value];
                 assignedPiece.chosen = true;
@@ -277,6 +278,7 @@ public class GameManager : MonoBehaviour
             {
                 players[players.Length - 1] = new Player();
                 players[players.Length - 1].playerName = "Bossman (AI Banker)";
+                players[players.Length - 1].ai = true;
 
                 Piece assignedPiece = findSparePiece();
                 assignedPiece.chosen = true;
