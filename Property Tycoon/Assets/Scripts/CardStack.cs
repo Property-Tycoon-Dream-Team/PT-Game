@@ -6,6 +6,7 @@ public class CardStack
 {
     Card[] cards;
     int type;
+    int pos = 0;
 
     /*
      * Function: popNextCard
@@ -16,7 +17,7 @@ public class CardStack
     Card popNextCard()
     {
         // Give next card, put card on back of pile (in higher logic set Player jailCard++ if is jail card)
-        return null;
+        return cards[pos++]; // edit with modulus 
     }
 
     /*
