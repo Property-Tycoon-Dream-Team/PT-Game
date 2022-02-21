@@ -55,7 +55,7 @@ public class PropertyInfo
     int getCost()
     {
         // Return the cost of this property
-        return 0;
+        return cost;
     }
 
     /*
