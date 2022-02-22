@@ -21,6 +21,16 @@ public class PropertyInfo
     bool checkHotel(propColour pc)
     {
         // Return whether this property is allowed to have hotel or not
+        int currentHouseCount = getNumOfHouse();
+        
+        if (!(pc.Equals("STATION") && pc.Equals("UTILITIES")))
+        {
+            if (currentHouseCount == 4)
+            {
+                return true;
+            }
+        }
+       
         return false;
     }
 
@@ -79,5 +89,6 @@ public class PropertyInfo
     void setNumOfHouse(int houses)
     {
         // Set num of houses of this property
+        numOfHouse = houses;
     }
 }
