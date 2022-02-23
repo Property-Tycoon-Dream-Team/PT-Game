@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardStack
 {
     Card[] cards;
+    Card temp;
     int type;
     int pos = 0;
 
@@ -28,6 +29,19 @@ public class CardStack
      */
     void shuffle()
     {
-        // Shuffle cards
+        // Shuffles cards
+
+        // Runs the process 100 times to ensure an effective shuffle
+        for (int i = 0; i < 100; i++)
+        {
+            // Generates two random numbers between 0 and the length of the card deck
+            int randomNumber1 = Random.Range(0, cards.Length);
+            int randomNumber2 = Random.Range(0, cards.Length);
+
+            // Swaps the contents of 'randomNumber1' with 'randomNumber2'
+            temp = cards[randomNumber1]; 
+            cards[randomNumber1] = cards[randomNumber2];
+            cards[randomNumber2] = temp;
+        }   
     }
 }
