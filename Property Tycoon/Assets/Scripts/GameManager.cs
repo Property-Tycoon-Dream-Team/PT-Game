@@ -342,7 +342,7 @@ public class GameManager : MonoBehaviour
      */
     void movePiece(int amount)
     {
-        // Move piece of active player amount of spaces (makes sure to update the players numOfTilesMoved)
+        activePlayer.gamePiece.movePiece(amount);
     }
 
     /*
