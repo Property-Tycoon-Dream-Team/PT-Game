@@ -4,6 +4,9 @@ using UnityEngine;
 
 abstract public class Card
 {
-    string title;
+    public string title;
+    public bool isActionComplete = false;
     public abstract string action(Player p);
+
 }
+    
