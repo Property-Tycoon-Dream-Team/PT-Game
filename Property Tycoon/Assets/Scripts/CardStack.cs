@@ -41,8 +41,9 @@ public class CardStack
         // Checks to see if the action is conplete
         if (activeCard.isActionComplete)
         {
-            // Returns the card to the bottom of the pile and sets 'activeCard back to 0
-            cards[cards.Length - 1] = activeCard; // card.length is subtracted by 1 to accomidate for the 0 index which prevents an out of bounds error 
+            // Returns the card to the bottom of the pile and sets 'isActionComplete' back to false before setting 'activeCard' back to being empty
+            cards[cards.Length - 1] = activeCard; // card.length is subtracted by 1 to accomidate for the 0 index which prevents an out of bounds error
+            activeCard.isActionComplete = false; 
             activeCard = null;
         }
     }
