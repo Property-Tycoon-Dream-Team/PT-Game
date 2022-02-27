@@ -35,10 +35,32 @@ public class PropertyInfo
         return false;
     }
 
+    /*
+     * Function: checkUtility
+     * Parameters: propColour pc - the property colour to check 
+     * Returns: boolean value, whether the property is a utility or not
+     * Purpose: to check if the propery is a utility
+     */
     bool checkUtility(propColour pc)
     {
         if (pc.Equals("UTILITIES"))
         {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+     * Function: checkStation
+     * Parameters: propColour pc - the property colour to check 
+     * Returns: boolean value, whether the property is a station or not
+     * Purpose: to check if the propery is a station
+     */
+    bool checkStation(propColour pc)
+    {
+        if (pc.Equals("STATION"))
+        {
+            station = true;
             return true;
         }
         return false;
@@ -64,6 +86,7 @@ public class PropertyInfo
     void setOwner(Player p)
     {
         // Set owner of this property to p
+        owner = p;
     }
 
     /*
