@@ -25,12 +25,22 @@ public class PropertyInfo
         
         if (!(pc.Equals("STATION") && pc.Equals("UTILITIES")))
         {
+            //Checks to see if there are 4 houses on the property ---> Might be the case that you would have to check to see if all 3 properties have 4 houses EACH but not specified...
             if (currentHouseCount == 4)
             {
                 return true;
             }
         }
-       
+
+        return false;
+    }
+
+    bool checkUtility(propColour pc)
+    {
+        if (pc.Equals("UTILITIES"))
+        {
+            return true;
+        }
         return false;
     }
 
