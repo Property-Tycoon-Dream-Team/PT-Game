@@ -20,7 +20,8 @@ static public class Board
         return null;
     }
 
-    public BoardTile findTile(int index)
+    static public BoardTile findTile(int index)
     {
-        return boardSquares.GetValue(index);
+        return boardSquares[index];
+    }
 }
