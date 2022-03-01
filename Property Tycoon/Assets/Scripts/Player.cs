@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player
 {
     public Piece gamePiece;
-    int position = 0;
     public string playerName;
     public bool ai;
     public bool jailed;
@@ -15,4 +14,10 @@ public class Player
     BoardTile[] mortgagedProperties;
     public int numOfTilesMoved = 0;
     bool bankrupt;
+
+    public void movePlayer(int amount)
+    {
+        
+
+    }
 }

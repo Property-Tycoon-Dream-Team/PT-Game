@@ -4,7 +4,9 @@ using UnityEngine;
 
 static public class Board
 {
-    static BoardTile[] boardSquares;
+    
+    
+    public static BoardTile[] boardSquares;
 
     /*
      * Function: getColouredProperties
@@ -17,4 +19,8 @@ static public class Board
         // Return all properties of colour pc
         return null;
     }
+
+    public BoardTile findTile(int index)
+    {
+        return boardSquares.GetValue(index);
 }

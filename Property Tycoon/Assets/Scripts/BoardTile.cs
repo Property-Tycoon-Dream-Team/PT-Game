@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardTile
+public class BoardTile : MonoBehaviour
 {
     PropertyInfo propertyInfo;
-    string tileName;
-    tileType type;
+    public string tileName;
+    public tileType type;
+
 }

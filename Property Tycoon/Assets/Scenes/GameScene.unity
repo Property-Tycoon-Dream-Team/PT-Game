@@ -2200,6 +2200,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Blue
+  chosen: 0
+  transform_piece: {fileID: 0}
+  t: 0
 --- !u!1 &458807711
 GameObject:
   m_ObjectHideFlags: 0
@@ -5757,6 +5760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: White
+  chosen: 0
+  transform_piece: {fileID: 0}
+  t: 0
 --- !u!1 &1212686061
 GameObject:
   m_ObjectHideFlags: 0
@@ -6408,6 +6414,98 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1256474205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256474207}
+  - component: {fileID: 1256474206}
+  m_Layer: 0
+  m_Name: The Angels Delight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1256474206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256474205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc6617363d57414fbf6e48a7f5867d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileName: 
+  type: 1
+  TileWaypoint: {fileID: 0}
+--- !u!4 &1256474207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256474205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.151, y: 2.022, z: -0.792}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1259666827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259666829}
+  - component: {fileID: 1259666828}
+  m_Layer: 0
+  m_Name: The Old Creek
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1259666828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259666827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc6617363d57414fbf6e48a7f5867d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileName: The Old Creek
+  type: 1
+  TileWaypoint: {fileID: 1259666829}
+--- !u!4 &1259666829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259666827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.538, y: 2.022, z: -0.792}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267612972
 GameObject:
   m_ObjectHideFlags: 0
@@ -8905,7 +9003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699487123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.506, y: 4.448, z: -3.9863}
+  m_LocalPosition: {x: 0.474, y: 4.449, z: -3.956}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 650186083}
@@ -8982,12 +9080,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699487123}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbbcbaef1286ab74fa131eef0d010712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Black
+  chosen: 0
+  transform_piece: {fileID: 1699487124}
+  t: 2.01
 --- !u!1 &1712728713
 GameObject:
   m_ObjectHideFlags: 0
@@ -9263,6 +9364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Green
+  chosen: 0
+  transform_piece: {fileID: 0}
+  t: 0
 --- !u!1 &1728338548
 GameObject:
   m_ObjectHideFlags: 0
@@ -10286,7 +10390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950431467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.546, y: 4.448, z: -3.974}
+  m_LocalPosition: {x: 0.524, y: 4.448, z: -3.974}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 251502679}
@@ -10306,6 +10410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Purple
+  chosen: 0
+  transform_piece: {fileID: 0}
+  t: 0
 --- !u!136 &1950431470
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10547,7 +10654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965949479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5825, y: 4.448, z: -3.9894}
+  m_LocalPosition: {x: 0.5825, y: 4.448, z: -3.967}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 522588464}
@@ -10630,6 +10737,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Red
+  chosen: 0
+  transform_piece: {fileID: 0}
+  t: 0
 --- !u!1 &1973675532
 GameObject:
   m_ObjectHideFlags: 0

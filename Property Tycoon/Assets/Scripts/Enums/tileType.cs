@@ -1,4 +1,4 @@
-enum tileType
+public enum tileType
 {
     GO,
     PROPERTY,

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Button startBtn;
     public Piece[] pieces;
     public GameObject[] playerInfoEntry;
+    public BoardTile[] Tiles;
 
     private Player[] players;
     private Player activePlayer;
