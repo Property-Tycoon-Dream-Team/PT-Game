@@ -22,7 +22,7 @@ public class PropertyInfo
     {
         // Return whether this property is allowed to have hotel or not
         int currentHouseCount = getNumOfHouse();
-        
+
         if (!(pc.Equals("STATION") && pc.Equals("UTILITIES")))
         {
             //Checks to see if there are 4 houses on the property ---> Might be the case that you would have to check to see if all 3 properties have 4 houses EACH but not specified...
@@ -45,6 +45,7 @@ public class PropertyInfo
     {
         if (pc.Equals("UTILITIES"))
         {
+            utility = true;
             return true;
         }
         return false;
