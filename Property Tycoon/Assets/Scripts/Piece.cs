@@ -55,9 +55,25 @@ public class Piece : MonoBehaviour
     {
         move = amount; 
     }
-
+    
+    /*
+     * Function: getCurrentTile
+     * Parameters: N/A
+     * Returns: int currentTile
+     * Purpose: returns the index of the current tile the gamePiece is on  
+     */
     public int getCurrentTile()
     {
         return currentTile; 
+    }
+
+    /*
+     * Function: getTotalTiles
+     * Parameters: N/A
+     * Returns: int totalTiles
+     * Purpose: returns the total amount of tiles the gamePiece has moved
+     */
+    public int getTotalTiles(){
+        return totalTiles;
     }
 }

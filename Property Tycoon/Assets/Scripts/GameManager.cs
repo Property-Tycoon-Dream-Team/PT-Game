@@ -361,12 +361,20 @@ public class GameManager : MonoBehaviour
      * Purpose: purchases the property that the current player lands on
      */
     public bool purchase()
-    {
-        int cTile = activePlayer.gamePiece.getCurrentTile();
-        if (activePlayer.addToProperties(Board.findTile(cTile))){
-            return true;
+    {   
+        if (activePlayer.gamePiece.getTotalTiles() >= 40){
+            int cTile = activePlayer.gamePiece.getCurrentTile();
+            if (activePlayer.addToProperties(Board.findTile(cTile)))
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
-        else{
+        else
+        {
             return false; 
         }
 
