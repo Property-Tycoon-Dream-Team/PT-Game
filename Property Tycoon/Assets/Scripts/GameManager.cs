@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     public int freeParkingValue;
-    public GameObject canvas;
+    public GameObject mainMenu;
     public GameObject menuCam;
     public GameObject mainCam;
     public Dropdown gamemodeChooser;
@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
      */
     public void startGame()
     {
-        canvas.SetActive(false);
+        mainMenu.SetActive(false);
         mainCam.SetActive(true);
         menuCam.SetActive(false);
 
@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviour
         // Set up card decks
 
         // Starts turn looping
-        while (playersLeft() > 1)
+        while (playersLeft() > 1 && true == false)
         {
             round();
         }
