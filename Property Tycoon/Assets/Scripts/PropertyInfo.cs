@@ -125,4 +125,17 @@ public class PropertyInfo
         // Set num of houses of this property
         numOfHouse = houses;
     }
+
+    /*
+     * Function: getPC
+     * Parameters: N/A
+     * Returns: propColour value - the colour of the property
+     * Purpose: return the property colour of this property
+     */
+    propColour getPC()
+    {
+        // Return colour of this property
+        return pc;
+    }
+
 }
