@@ -55,4 +55,9 @@ public class Piece : MonoBehaviour
     {
         move = amount; 
     }
+
+    public int getCurrentTile()
+    {
+        return currentTile; 
+    }
 }

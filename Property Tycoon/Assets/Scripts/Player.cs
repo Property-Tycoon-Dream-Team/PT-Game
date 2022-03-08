@@ -10,14 +10,26 @@ public class Player
     public bool jailed;
     int jailCards;
     public int cash;
-    BoardTile[] ownedProperties;
-    BoardTile[] mortgagedProperties;
-    public int numOfTilesMoved = 0;
-    bool bankrupt;
+    public List<BoardTile> ownedProperties = new List<BoardTile>();
+    public List<BoardTile> mortgagedProperties = new List<BoardTile>();
+    bool bankrupt = false
+    ;
 
-    public void movePlayer(int amount)
+    
+    public bool getBankrupt()
     {
-        
+        return bankrupt;
+    }
+
+    public bool addToProperties(BoardTile bt)
+    {
+        if (ownedProperties.Contains(bt)){
+            return false; 
+        }
+        else{
+            ownedProperties.Add(bt);
+            return true; 
+        }
+    }
 
     }
-}

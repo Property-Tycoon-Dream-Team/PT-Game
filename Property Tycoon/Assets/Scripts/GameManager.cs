@@ -246,10 +246,18 @@ public class GameManager : MonoBehaviour
      * Returns: integer value representing the number of players left
      * Purpose: returns number of players left
      */
-    int playersLeft()
+    public int playersLeft()
     {
-        // Return the amount of players left (you can look inside each Player in players array and check the bankrupt bool value)
-        return 0;
+        int check = 0;
+        foreach (Player p in players)
+        {
+            if (!p.getBankrupt())
+            {
+                check++;
+            }
+            
+        }
+        return check;
     }
 
     /*
@@ -349,12 +357,19 @@ public class GameManager : MonoBehaviour
     /*
      * Function: purchase
      * Parameters: N/A 
-     * Returns: N/A 
+     * Returns: true if the player successfully purchases the property, false if unsuccessful.
      * Purpose: purchases the property that the current player lands on
      */
-    void purchase()
+    public bool purchase()
     {
-        // Purchase property (only allowed after 1 circuit)
+        int cTile = activePlayer.gamePiece.getCurrentTile();
+        if (activePlayer.addToProperties(Board.findTile(cTile))){
+            return true;
+        }
+        else{
+            return false; 
+        }
+
     }
 
     /*
