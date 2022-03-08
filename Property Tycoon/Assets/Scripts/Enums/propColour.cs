@@ -1,4 +1,4 @@
-enum propColour
+public enum propColour
 {
     BROWN,
     STATION,

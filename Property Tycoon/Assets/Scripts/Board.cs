@@ -19,7 +19,7 @@ static public class Board
         List<BoardTile> props = new List<BoardTile>();
         foreach (BoardTile tile in boardSquares)
         {
-            if (tile.propertyInfo.getPC = pc) 
+            if (tile.propertyInfo.getPC() == pc) 
             {
                 props.Add(tile);
             }

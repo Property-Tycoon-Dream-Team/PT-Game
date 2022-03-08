@@ -1,4 +1,4 @@
-enum gameType
+public enum gameType
 {
     STANDARD = 0,
     TIMED = 1,

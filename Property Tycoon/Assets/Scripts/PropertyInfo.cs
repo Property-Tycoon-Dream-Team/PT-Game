@@ -132,7 +132,7 @@ public class PropertyInfo
      * Returns: propColour value - the colour of the property
      * Purpose: return the property colour of this property
      */
-    propColour getPC()
+    public propColour getPC()
     {
         // Return colour of this property
         return pc;
