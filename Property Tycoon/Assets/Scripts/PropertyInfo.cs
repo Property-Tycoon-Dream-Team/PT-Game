@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PropertyInfo
 {
-    int cost;
+    public int cost;
     Player owner;
-    int numOfHouse;
-    bool hotel;
-    propColour pc;
-    bool utility;
-    bool station;
+    public int numOfHouse;
+    public bool hotel;
+    public propColour pc;
+    public bool utility;
+    public bool station;
 
     /*
      * Function: checkHotel
@@ -18,7 +18,7 @@ public class PropertyInfo
      * Returns: boolean value, whether a hotel can be  made
      * Purpose: to check whether a hotel is eligible to be built
      */
-    bool checkHotel(propColour pc)
+    public bool checkHotel(propColour pc)
     {
         // Return whether this property is allowed to have hotel or not
         int currentHouseCount = getNumOfHouse();
@@ -33,6 +33,17 @@ public class PropertyInfo
         }
 
         return false;
+    }
+
+    /*
+     * Function: setHotel
+     * Parameters: bool x - true or false whether or not the property has a hotel on it or not 
+     * Returns: N/A
+     * Purpose: to assign this property with a hotel
+     */
+    public void setHotel(bool x)
+    {
+        hotel = x;
     }
 
     /*
@@ -108,7 +119,7 @@ public class PropertyInfo
      * Returns: integer value - number of houses on this property
      * Purpose: return the number of houses on this property
      */
-    int getNumOfHouse()
+    public int getNumOfHouse()
     {
         // Return num of houses on this property
         return numOfHouse;
@@ -120,7 +131,7 @@ public class PropertyInfo
      * Returns: N/A
      * Purpose: sets the num of houses on this property
      */
-    void setNumOfHouse(int houses)
+    public void setNumOfHouse(int houses)
     {
         // Set num of houses of this property
         numOfHouse = houses;
