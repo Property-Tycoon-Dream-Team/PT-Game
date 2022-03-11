@@ -382,7 +382,7 @@ public class GameManager : MonoBehaviour
 
     /*
      * Function: upgrade
-     * Parameters: N/A 
+     * Parameters: BoardTile prop - The desired property to be upgraded by the player 
      * Returns: N/A 
      * Purpose: upgrades property to houses then hotels
      */
