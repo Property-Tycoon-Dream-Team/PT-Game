@@ -386,9 +386,33 @@ public class GameManager : MonoBehaviour
      * Returns: N/A 
      * Purpose: upgrades property to houses then hotels
      */
-    void upgrade()
+    public void upgrade(BoardTile prop)
     {
-        // Upgrade to houses then hotels (follow ruleset)
+        PropertyInfo pi = prop.propertyInfo;
+        propColour currentpc = pi.getPC();
+        int count = 0;
+
+        foreach (var property in activePlayer.ownedProperties)
+        {
+            //checking to see if player has all 3 property of the same colour before being allowed to upgrade
+            if (property.propertyInfo.getPC() == currentpc)
+            {
+                count = count + 1;
+                if (count == 3)
+                {
+                    //checking if a hotel needs to be made or a house
+                    if (!pi.checkHotel(currentpc))
+                    {
+                        int currentHouses = pi.getNumOfHouse();
+                        pi.setNumOfHouse(currentHouses + 1);
+                    }
+                    else
+                    {
+                        pi.setHotel(true);
+                    }
+                }
+            }
+        }
     }
 
     /*
