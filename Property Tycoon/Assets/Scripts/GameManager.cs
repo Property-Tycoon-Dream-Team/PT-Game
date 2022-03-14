@@ -388,7 +388,7 @@ public class GameManager : MonoBehaviour
         PropertyInfo pi = prop.propertyInfo;
         propColour currentpc = pi.getPC();
         int count = 0;
-        foreach (var property in C.ownedProperties)
+        foreach (var property in activePlayer.ownedProperties)
         {
             //checking to see if player has all 3 property of the same colour before being allowed to upgrade
             if (property.propertyInfo.getPC() == currentpc)
