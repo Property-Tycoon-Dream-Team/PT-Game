@@ -11,6 +11,7 @@ public class PropertyInfo
     public propColour pc;
     public bool utility;
     public bool station;
+    public bool morgaged = false;
 
     /*
      * Function: checkHotel
@@ -107,7 +108,7 @@ public class PropertyInfo
      * Returns: integer value - cost of the property
      * Purpose: gets the cost of the property
      */
-    int getCost()
+    public int getCost()
     {
         // Return the cost of this property
         return cost;
@@ -136,6 +137,32 @@ public class PropertyInfo
         // Set num of houses of this property
         numOfHouse = houses;
     }
+    
+
+
+    /*
+     * Function: mortgage
+     * Parameters: N/A
+     * Returns: N/A
+     * Purpose: tags the property as mortaged.
+     */
+    public void mortgage()
+    {
+        morgaged = true;
+    }
+
+    /*
+     * Function: unmortgage
+     * Parameters: N/A
+     * Returns: N/A
+     * Purpose: removes the mortaged tag from the property.
+     */
+    public void unmortgage()
+    {
+        morgaged = false;
+    }
+
+
 
     /*
      * Function: getPC

@@ -347,7 +347,7 @@ public class GameManager : MonoBehaviour
      * Function: movePiece
      * Parameters: int amount - amount of spaces to move
      * Returns: N/A 
-     * Purpose: moves the player 'amount' amount of spaces around the board
+     * Purpose: moves the player 'amount' of spaces around the board
      */
     void movePiece(int amount)
     {
@@ -359,25 +359,22 @@ public class GameManager : MonoBehaviour
      * Parameters: N/A 
      * Returns: true if the player successfully purchases the property, false if unsuccessful.
      * Purpose: purchases the property that the current player lands on
+     * ============
+     * NEED TO ADD MONEYS GOING DOWN AND CHECKS FOR THAT
+     * ============
      */
     public bool purchase()
     {   
-        if (activePlayer.gamePiece.getTotalTiles() >= 40){
+        if (activePlayer.gamePiece.getTotalTiles() >= 40)
+        {
             int cTile = activePlayer.gamePiece.getCurrentTile();
             if (activePlayer.addToProperties(Board.findTile(cTile)))
             {
                 return true;
             }
-            else
-            {
-                return false; 
-            }
+            else return false;  
         }
-        else
-        {
-            return false; 
-        }
-
+        else return false; 
     }
 
     /*
@@ -391,8 +388,7 @@ public class GameManager : MonoBehaviour
         PropertyInfo pi = prop.propertyInfo;
         propColour currentpc = pi.getPC();
         int count = 0;
-
-        foreach (var property in activePlayer.ownedProperties)
+        foreach (var property in C.ownedProperties)
         {
             //checking to see if player has all 3 property of the same colour before being allowed to upgrade
             if (property.propertyInfo.getPC() == currentpc)
@@ -430,34 +426,46 @@ public class GameManager : MonoBehaviour
 
     /*
     * Function: mortgage
-    * Parameters: N/A 
-    * Returns: N/A
-    * Purpose: mortgages a property
+    * Parameters: BoardTile bt - the property in which is being mortaged.
+    * Returns: a bool value, if the player succesfully mortgaged the property. 
+    * Purpose: calls the addToMorgagedProperties function for the active player. 
     */
-    void mortgage()
+    public bool mortgage(BoardTile bt)
     {
-        // If need to raise funds, gain half value of original property - cant receive rent from it (can be unmortgaged)
+        if(activePlayer.addToMorgagedProperties(bt))
+        {
+            return true;
+        }
+        else return false;
     }
 
     /*
     * Function: unMortgage
-    * Parameters: N/A 
-    * Returns: N/A
-    * Purpose: unmortgages a property
+    * Parameters: BoardTile bt - the property in which is being unmortaged.
+    * Returns: a bool value, if the player succesfully unmortgaged the property. 
+    * Purpose: calls the removeMortgage function for the active player. 
     */
-    void unMortgage()
+    public bool unMortgage(BoardTile bt)
     {
-        // Pay half original value of property, rent reenabled
+        if(activePlayer.removeMortgage(bt))
+        {
+            return true;
+        }
+        else return false;
     }
 
     /*
     * Function: sell
-    * Parameters: N/A 
-    * Returns: N/A
-    * Purpose: sells a property
+    * Parameters: BoardTile bt - the property in which is being sold.
+    * Returns: a bool value, if the player succesfully sells the property. 
+    * Purpose: calls the sellProperty for the active player. 
     */
-    void sell()
+    public bool sell(BoardTile bt)
     {
-        // Logic to sell property for full value (if mortgaged get half) - can call unMortgage()
+        if(activePlayer.sellProperty(bt))
+        {
+            return true;
+        }
+        else return false;
     }
 }
