@@ -85,7 +85,7 @@ public class PropertyInfo
      * Returns: Player instance, who owns this property
      * Purpose: return the owner
      */
-    Player getOwner()
+    public Player getOwner()
     {
         return owner;
     }
@@ -96,10 +96,21 @@ public class PropertyInfo
      * Returns: N/A
      * Purpose: sets a new owner
      */
-    void setOwner(Player p)
+    public void setOwner(Player p)
     {
         // Set owner of this property to p
         owner = p;
+    }
+
+    /*
+     * Function: removeOwner
+     * Parameters: N/A
+     * Returns: N/A
+     * Purpose: removes the owner form the property
+     */
+    public void removeOwner()
+    {
+        owner = null; 
     }
 
     /*

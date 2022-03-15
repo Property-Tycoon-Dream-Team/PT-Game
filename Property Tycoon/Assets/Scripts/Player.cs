@@ -38,8 +38,10 @@ public class Player
             return false; 
         }
         // adds property to the property list.
-        else{
+        else
+        {
             ownedProperties.Add(bt);
+            bt.propertyInfo.setOwner(this);
             return true; 
         }
     }
@@ -103,6 +105,7 @@ public class Player
             // remove from mortgaged list, remove mortgage tag from propertyInfo, adds half of property value to cash pile.
             mortgagedProperties.Remove(bt);
             bt.propertyInfo.unmortgage();
+            bt.propertyInfo.removeOwner();
             addCash((bt.propertyInfo.getCost())/2);
             return true; 
         }
@@ -111,6 +114,7 @@ public class Player
         {
             // remove from properties list, adds cash to cash pile. 
             ownedProperties.Remove(bt);
+            bt.propertyInfo.removeOwner();
             addCash(bt.propertyInfo.getCost());
             return true;
         }
