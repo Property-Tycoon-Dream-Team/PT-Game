@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -359,9 +360,6 @@ public class GameManager : MonoBehaviour
      * Parameters: N/A 
      * Returns: true if the player successfully purchases the property, false if unsuccessful.
      * Purpose: purchases the property that the current player lands on
-     * ============
-     * NEED TO ADD MONEYS GOING DOWN AND CHECKS FOR THAT
-     * ============
      */
     public bool purchase()
     {   
@@ -415,12 +413,26 @@ public class GameManager : MonoBehaviour
     * Function: auction
     * Parameters: N/A 
     * Returns: Player value - who won the bid 
-    * Purpose: upgrades property to houses then hotels
+    * Purpose: 
     */
-    Player auction()
+    public Player auction(BoardTile bt)
     {
         // Run when player does not purchase, gives property to highest bidder
         // Remains unsold if no bids
+
+        int auctionCost = 0;
+        int i = (Array.IndexOf(players, activePlayer) +1);
+        Player highestBidder;
+        bool end = false;
+
+        do
+        {
+            // TODO: if player choose skip -- next player
+            // TODO: if all players choose skip -- property sold to highest bidder. 
+        }
+        while (!end);
+
+        
         return null;
     }
 

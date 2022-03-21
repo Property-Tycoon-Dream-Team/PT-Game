@@ -34,14 +34,17 @@ public class Player
     public bool addToProperties(BoardTile bt)
     {
         // check if the property is already owned. 
-        if (ownedProperties.Contains(bt)){
+        if ((ownedProperties.Contains(bt)) || (cash < bt.getPropertyInfo.getCost())){
             return false; 
         }
         // adds property to the property list.
         else
         {
             ownedProperties.Add(bt);
+            // remove property value from players cash pile.
+            addCash(-(bt.getPropertyInfo.getCost()))
             bt.propertyInfo.setOwner(this);
+
             return true; 
         }
     }
