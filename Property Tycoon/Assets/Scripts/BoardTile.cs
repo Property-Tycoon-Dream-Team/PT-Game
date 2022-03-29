@@ -14,7 +14,7 @@ public class BoardTile : MonoBehaviour
      * Returns: propInfo class - the property info relating to this tile
      * Purpose: to return details of the property on this tile
      */
-    PropertyInfo getPropertyInfo()
+    public PropertyInfo getPropertyInfo()
     {
         return propertyInfo;
         // Return property info for this tile
