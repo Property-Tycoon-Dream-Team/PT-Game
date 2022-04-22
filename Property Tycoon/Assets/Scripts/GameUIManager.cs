@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameUIManager : MonoBehaviour
 {
+    public GameManager manager;
+
     public void OnUpgradeClicked()
     {
 
@@ -31,7 +33,7 @@ public class GameUIManager : MonoBehaviour
 
     public void OnEndTurnClicked()
     {
-
+        manager.endTurn();
     }
 
     public void OnPurchaseClicked()

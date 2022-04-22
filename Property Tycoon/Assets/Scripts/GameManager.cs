@@ -8,14 +8,24 @@ public class GameManager : MonoBehaviour
 
     public int freeParkingValue;
     public GameObject mainMenu;
+
+    public GameObject gameMenu;
+    public Text timerText;
+    public Text gamemodeText;
+    public Text playerListText;
+
     public GameObject menuCam;
     public GameObject mainCam;
+
     public Dropdown gamemodeChooser;
     public Slider playerSlider;
     public InputField timeInput;
+
     public GameObject pieceErrorText;
     public GameObject nameErrorText;
+
     public Button startBtn;
+
     public Piece[] pieces;
     public GameObject[] playerInfoEntry;
     public BoardTile[] Tiles;
@@ -37,6 +47,21 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         setPieceOptions(null);
+    }
+
+    /*
+     * Function: Update (MonoBehavior function - called every frame)
+     * Parameters: N/A 
+     * Returns: N/A  
+     * Purpose: called once for every frame
+     */
+    private void Update()
+    {
+        if (gamemode == gameType.TIMED)
+        {
+            timeLeft -= Time.deltaTime;
+            timerText.text = ((int)(timeLeft / 60f)).ToString() + " min(s)";
+        }
     }
 
     /*
@@ -226,9 +251,13 @@ public class GameManager : MonoBehaviour
             {
                 timeLeft = 30f;
             }
+
+            timeLeft *= 60;
         }
 
         playerSetup();
+        gameUISetup();
+        gameMenu.SetActive(true);
         // Set up board and properties
         // Set up card decks
 
@@ -391,7 +420,7 @@ public class GameManager : MonoBehaviour
             //checking to see if player has all 3 property of the same colour before being allowed to upgrade
             if (property.propertyInfo.getPC() == currentpc)
             {
-                count = count + 1;
+                count++;
                 if (count == 3)
                 {
                     //checking if a hotel needs to be made or a house
@@ -479,5 +508,40 @@ public class GameManager : MonoBehaviour
             return true;
         }
         else return false;
+    }
+
+    /*
+    * Function: endTurn
+    * Purpose: ends the current players turn
+    */
+    public void endTurn()
+    {
+
+    }
+
+    /*
+    * Function: gameUISetup
+    * Purpose: sets up game UI
+    */
+    private void gameUISetup()
+    {
+
+        if (gamemode == gameType.TIMED)
+        {
+            timerText.text = timeLeft.ToString();
+            gamemodeText.text = "Time Left";
+        }
+        else if (gamemode == gameType.STANDARD)
+        {
+            timerText.text = "";
+            gamemodeText.text = "Standard";
+        }
+
+        string playerNames = "";
+        foreach (Player plyr in players)
+        {
+            playerNames += plyr.playerName + "\n";
+        }
+        playerListText.text = playerNames;
     }
 }
