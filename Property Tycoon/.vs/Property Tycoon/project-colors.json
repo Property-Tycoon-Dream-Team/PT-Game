@@ -10,7 +10,12 @@
       "ProjectGuid": "7dc8c9ec-7940-ba46-3c4b-da1d547166f6",
       "DisplayName": "Tests",
       "ColorIndex": 1
+    },
+    "b05008aa-ae52-3026-1590-91c25f92523b": {
+      "ProjectGuid": "b05008aa-ae52-3026-1590-91c25f92523b",
+      "DisplayName": "NewAssembly",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

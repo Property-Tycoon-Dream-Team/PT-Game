@@ -12,7 +12,7 @@ public class Player
     public int cash;
     public List<BoardTile> ownedProperties = new List<BoardTile>();
     public List<BoardTile> mortgagedProperties = new List<BoardTile>();
-    bool bankrupt = false;
+    public bool bankrupt = false;
 
     /*
      * Function: getBankrupt

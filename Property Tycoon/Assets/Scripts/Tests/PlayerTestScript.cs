@@ -1,25 +1,61 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
+
+
 
 public class PlayerTestScript
 {
-    // A Test behaves as an ordinary method
+
+
     [Test]
-    public void PlayerTestScriptSimplePasses()
+    public void TestGetBankrupt()
     {
-        // Use the Assert class to test conditions
+        Player player = new Player();
+
+        Assert.IsFalse(player.getBankrupt());
+        player.bankrupt = true;
+        Assert.IsTrue(player.getBankrupt());
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator PlayerTestScriptWithEnumeratorPasses()
+
+
+    [Test]
+    public void TestAddToProperties()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+
     }
+
+    [Test]
+    public void TestAddToMortgagedProperties()
+    {
+
+    }
+
+    [Test]
+    public void TestRemoveMortgage()
+    {
+
+    }
+
+    [Test]
+    public void TestSellProperty()
+    {
+
+    }
+
+    [Test]
+    public void TestAddCash()
+    {
+        Player player = new Player();
+
+        player.cash = 0;
+        player.addCash(100);
+        Assert.That(player.cash == 100);
+
+        player.addCash(200);
+        Assert.That(player.cash == 300);
+
+        Assert.That(player.cash != 0);
+    }
+
+
 }
