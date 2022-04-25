@@ -2340,6 +2340,7 @@ GameObject:
   - component: {fileID: 354347900}
   - component: {fileID: 354347902}
   - component: {fileID: 354347901}
+  - component: {fileID: 354347903}
   m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
@@ -2393,7 +2394,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2408,6 +2409,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354347899}
   m_CullTransparentMesh: 1
+--- !u!114 &354347903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354347899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e3ed4bb858af14d9be2f5a42d690e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wait: 3
+  msg: {fileID: 354347901}
 --- !u!1 &354728032
 GameObject:
   m_ObjectHideFlags: 0
@@ -3857,7 +3872,7 @@ GameObject:
   - component: {fileID: 503381733}
   - component: {fileID: 503381732}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: ActivePlayerIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16529,9 +16544,11 @@ MonoBehaviour:
   freeParkingValue: 0
   mainMenu: {fileID: 2066298724}
   gameMenu: {fileID: 210395306}
+  playerIndicator: {fileID: 503381731}
   timerText: {fileID: 266239973}
   gamemodeText: {fileID: 1034379343}
   playerListText: {fileID: 179217330}
+  messager: {fileID: 354347903}
   menuCam: {fileID: 1144628136}
   mainCam: {fileID: 1016134921}
   gamemodeChooser: {fileID: 1483370181}

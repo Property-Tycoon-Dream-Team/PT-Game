@@ -8,27 +8,27 @@ public class GameUIManager : MonoBehaviour
 
     public void OnUpgradeClicked()
     {
-
+        manager.upgrade();
     }
 
     public void OnMortgageClicked()
     {
-
+        manager.mortgage();
     }
 
     public void OnUnMortgageClicked()
     {
-
+        manager.unMortgage();
     }
 
     public void OnSellClicked()
     {
-
+        manager.sell();
     }
 
     public void OnRTDClicked()
     {
-
+        manager.rollDice(true);
     }
 
     public void OnEndTurnClicked()
@@ -38,17 +38,17 @@ public class GameUIManager : MonoBehaviour
 
     public void OnPurchaseClicked()
     {
-
+        manager.purchase();
     }
 
     public void OnAuctionClicked()
     {
-
+        manager.auction();
     }
 
     public void OnUpgradeDropdownClicked()
     {
-
+        
     }
 
     public void OnSellDropdownClicked()
@@ -68,6 +68,7 @@ public class GameUIManager : MonoBehaviour
 
     public void OnBackClicked()
     {
-
+        // turn off popup things
+        // turn back on main one
     }
 }

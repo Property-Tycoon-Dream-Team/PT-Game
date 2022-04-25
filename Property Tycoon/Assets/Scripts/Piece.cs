@@ -36,7 +36,7 @@ public class Piece : MonoBehaviour
      * Returns: N/A  
      * Purpose: Move the piece to the correct tile depending on the amount. 
      */
-    private void moveHelper(int amount)
+    public void moveHelper(int amount)
     {
         BoardTile targetBT = null;
         totalTiles += amount; 

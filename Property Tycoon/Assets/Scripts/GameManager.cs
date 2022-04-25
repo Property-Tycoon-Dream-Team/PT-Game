@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenu;
 
     public GameObject gameMenu;
+    public Transform playerIndicator;
     public Text timerText;
     public Text gamemodeText;
     public Text playerListText;
+    public SystemMsgs messager;
 
     public GameObject menuCam;
     public GameObject mainCam;
@@ -28,9 +30,10 @@ public class GameManager : MonoBehaviour
 
     public Piece[] pieces;
     public GameObject[] playerInfoEntry;
-    public BoardTile[] Tiles;
+    public BoardTile[] tiles;
 
     private Player[] players;
+    private int activePlayerID;
     private Player activePlayer;
     private float timeLeft;
     private CardStack potLuckStack;
@@ -177,17 +180,19 @@ public class GameManager : MonoBehaviour
     /*
      * Function: rollDice
      * Parameters: bool track - whether or not this dice roll should be tracked 
-     * Returns: integer value between 2-12
+     * Returns: N/A
      * Purpose: used to generate random dice roll and track number of doubles rolled
      */
-    int rollDice(bool track)
+    public void rollDice(bool track)
     {
         Dice dice = new Dice();
         if (track)
         {
             doubleTracker = dice.isDouble ? doubleTracker + 1 : 0;
         }
-        return dice.value;
+
+        messager.NewMessage(activePlayer.playerName + " rolled: " + dice.value);
+        activePlayer.gamePiece.moveHelper(dice.value);
     }
 
     /*
@@ -327,6 +332,9 @@ public class GameManager : MonoBehaviour
                 players[players.Length - 1].cash = 1500;
             }
         }
+        activePlayerID = 0;
+        activePlayer = players[activePlayerID];
+        
         prettyDebugPlayers();
     }
 
@@ -410,8 +418,10 @@ public class GameManager : MonoBehaviour
      * Returns: N/A 
      * Purpose: upgrades property to houses then hotels
      */
-    public void upgrade(BoardTile prop)
+    public void upgrade()
     {
+        BoardTile prop = tiles[0]; // make current tile?!
+
         PropertyInfo pi = prop.propertyInfo;
         propColour currentpc = pi.getPC();
         int count = 0;
@@ -444,8 +454,9 @@ public class GameManager : MonoBehaviour
     * Returns: Player value - who won the bid 
     * Purpose: 
     */
-    public Player auction(BoardTile bt)
+    public Player auction()
     {
+        BoardTile bt = tiles[0]; // make current tile?!
         // Run when player does not purchase, gives property to highest bidder
         // Remains unsold if no bids
 
@@ -471,9 +482,10 @@ public class GameManager : MonoBehaviour
     * Returns: a bool value, if the player succesfully mortgaged the property. 
     * Purpose: calls the addToMorgagedProperties function for the active player. 
     */
-    public bool mortgage(BoardTile bt)
+    public bool mortgage()
     {
-        if(activePlayer.addToMorgagedProperties(bt))
+        BoardTile bt = tiles[0]; // make current tile?!
+        if (activePlayer.addToMorgagedProperties(bt))
         {
             return true;
         }
@@ -486,9 +498,10 @@ public class GameManager : MonoBehaviour
     * Returns: a bool value, if the player succesfully unmortgaged the property. 
     * Purpose: calls the removeMortgage function for the active player. 
     */
-    public bool unMortgage(BoardTile bt)
+    public bool unMortgage()
     {
-        if(activePlayer.removeMortgage(bt))
+        BoardTile bt = tiles[0]; // make current tile?!
+        if (activePlayer.removeMortgage(bt))
         {
             return true;
         }
@@ -501,9 +514,10 @@ public class GameManager : MonoBehaviour
     * Returns: a bool value, if the player succesfully sells the property. 
     * Purpose: calls the sellProperty for the active player. 
     */
-    public bool sell(BoardTile bt)
+    public bool sell()
     {
-        if(activePlayer.sellProperty(bt))
+        BoardTile bt = tiles[0]; // make current tile?!
+        if (activePlayer.sellProperty(bt))
         {
             return true;
         }
@@ -516,7 +530,19 @@ public class GameManager : MonoBehaviour
     */
     public void endTurn()
     {
+        activePlayerID++;
+        if (activePlayerID == players.Length)
+        {
+            playerIndicator.transform.position += new Vector3(0f, 34f * (activePlayerID - 1), 0f);
+            activePlayerID = 0;
+        }
+        else
+        {
+            playerIndicator.transform.position -= new Vector3(0f, 34f, 0f);
+        }
 
+        activePlayer = players[activePlayerID];
+        messager.NewMessage("Now playing: " + activePlayer.playerName);
     }
 
     /*
