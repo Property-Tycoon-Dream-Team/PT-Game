@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public Piece[] pieces;
     public GameObject[] playerInfoEntry;
     public BoardTile[] tiles;
+    public GameObject tileParent;
 
     private Player[] players;
     private int activePlayerID;
@@ -192,8 +193,21 @@ public class GameManager : MonoBehaviour
         }
 
         messager.NewMessage(activePlayer.playerName + " rolled: " + dice.value);
-        activePlayer.gamePiece.moveHelper(dice.value);
+
+        activePlayer.gamePiece.movePiece(dice.value);
     }
+
+    /*
+     * Function: getTileObject
+     * Parameters: int index, the location of the tile on the board
+     * Returns: GameObject instance of the board tile
+     * Purpose: For getting the location of the board tile to move a game piece to it. 
+     */
+    public GameObject getTileObject(int index)
+    {
+        return (tileParent.transform.GetChild(index).gameObject);
+    }
+
 
     /*
      * Function: onDropdownChange

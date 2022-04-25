@@ -19,4 +19,15 @@ public class BoardTile : MonoBehaviour
         return propertyInfo;
         // Return property info for this tile
     }
+
+    /*
+     * Function: getTileName
+     * Parameters: N/A
+     * Returns: tileName, the name of the tile
+     * Purpose: Used for finding a BoardTile from gameobject
+     */
+    public string getTileName()
+    {
+        return tileName;
+    }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 static public class Board
 {
     
-    
     public static BoardTile[] boardSquares;
 
     /*
@@ -30,6 +29,12 @@ static public class Board
         return propArray;
     }
 
+    /*
+     * Function: findTile
+     * Parameters: index, the location of the board tile
+     * Returns: BoardTile
+     * Purpose: To return a board tile at a given index
+     */
     static public BoardTile findTile(int index)
     {
         return boardSquares[index];

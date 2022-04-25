@@ -5,11 +5,13 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public string pieceName;
+    public Transform trans;
     public bool chosen;
     public int currentTile = 0;
     public int totalTiles = 0;
     private int move = 0;
-    public float speed;
+    public float speed = 100.5f;
+    private GameManager gm;
 
     /*
      * Function: Update (MonoBehavior function - called every frame)
@@ -17,7 +19,12 @@ public class Piece : MonoBehaviour
      * Returns: N/A  
      * Purpose: Checks if move is equal to zero, if not movePiece is run. 
      */
-
+    
+    void Awake()
+    {
+        gm = GameObject.FindGameObjectWithTag("manager").GetComponent<GameManager>();
+        Debug.Log(gm);
+    }
     void Update()
     {   
         if (move == 0){
@@ -25,8 +32,8 @@ public class Piece : MonoBehaviour
         }
         else 
         {
-            movePiece(move);
-            move = 0; 
+            moveHelper(move);
+            
         }
     }
 
@@ -38,11 +45,11 @@ public class Piece : MonoBehaviour
      */
     public void moveHelper(int amount)
     {
-        BoardTile targetBT = null;
         totalTiles += amount; 
-        currentTile = (currentTile % 40 + 40) % 40;
-        targetBT = Board.findTile(currentTile);
-        transform.position = Vector3.MoveTowards(transform.position, targetBT.transform.position, Time.deltaTime * speed);
+        currentTile = (totalTiles % 40 + 40) % 40;
+        Debug.Log(pieceName);
+        //transform.position = Vector3.MoveTowards(transform.position, gm.getTileObject(currentTile).transform.position, Time.deltaTime * speed);
+        trans.position += new Vector3(0f, 0f, speed * Time.deltaTime);
     }
 
     /*
