@@ -7,6 +7,7 @@ public class BoardTile : MonoBehaviour
     public PropertyInfo propertyInfo;
     public string tileName;
     public tileType type;
+    public Transform location;
 
     /*
      * Function: getPropertyInfo

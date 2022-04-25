@@ -5,13 +5,16 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public string pieceName;
-    public Transform trans;
+    public Transform location;
+    public Transform target;
     public bool chosen;
     public int currentTile = 0;
     public int totalTiles = 0;
-    private int move = 0;
-    public float speed = 100.5f;
+    public float speed;
     private GameManager gm;
+    public float wait = 3;
+    float timer;
+    bool move = false;
 
     /*
      * Function: Update (MonoBehavior function - called every frame)
@@ -27,14 +30,12 @@ public class Piece : MonoBehaviour
     }
     void Update()
     {   
-        if (move == 0){
-            return;
-        }
-        else 
+        while (move && timer > 0)
         {
-            moveHelper(move);
-            
+            timer -= Time.deltaTime;
+            moveHelper();
         }
+        move = false;
     }
 
     /*
@@ -43,13 +44,11 @@ public class Piece : MonoBehaviour
      * Returns: N/A  
      * Purpose: Move the piece to the correct tile depending on the amount. 
      */
-    public void moveHelper(int amount)
+    public void moveHelper()
     {
-        totalTiles += amount; 
-        currentTile = (totalTiles % 40 + 40) % 40;
-        Debug.Log(pieceName);
-        //transform.position = Vector3.MoveTowards(transform.position, gm.getTileObject(currentTile).transform.position, Time.deltaTime * speed);
-        trans.position += new Vector3(0f, 0f, speed * Time.deltaTime);
+        Debug.Log((gm.getTileObject(currentTile)).name);
+        target = gm.getTileObject(currentTile).transform;
+        transform.position = target.position;
     }
 
     /*
@@ -60,7 +59,10 @@ public class Piece : MonoBehaviour
      */
     public void movePiece(int amount)
     {
-        move = amount; 
+        totalTiles += amount; 
+        currentTile = (totalTiles % 40 + 40) % 40;
+        timer = wait;
+        move = true; 
     }
     
     /*

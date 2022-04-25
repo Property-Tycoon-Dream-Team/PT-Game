@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Wookie Hole
   type: 1
+  location: {fileID: 0}
 --- !u!1 &18294259
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: James Webb Way
   type: 1
+  location: {fileID: 0}
 --- !u!1 &36116877
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Yue Fei Square
   type: 1
+  location: {fileID: 0}
 --- !u!1 &52457288
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Brighton Station
   type: 1
+  location: {fileID: 63051840}
 --- !u!1 &67302532
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Free Parking
   type: 4
+  location: {fileID: 0}
 --- !u!1 &94559225
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,6 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Picard Avenue
   type: 1
+  location: {fileID: 0}
 --- !u!1 &107903207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +2277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Mulan Rouge
   type: 1
+  location: {fileID: 0}
 --- !u!1 &277029841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,11 +2432,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Battleship
-  trans: {fileID: 318185052}
+  location: {fileID: 318185052}
   chosen: 0
   currentTile: 0
   totalTiles: 0
-  speed: 0
+  speed: 2
+  wait: 3
 --- !u!1 &322200077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,11 +2562,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Top Hat
-  trans: {fileID: 344942682}
+  location: {fileID: 344942682}
   chosen: 0
   currentTile: 0
   totalTiles: 0
-  speed: 0
+  speed: 2
+  wait: 3
 --- !u!1 &345536645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3658,6 +3667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Jail
   type: 6
+  location: {fileID: 421382695}
 --- !u!1 &456063786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,6 +3713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Shatner Close
   type: 1
+  location: {fileID: 0}
 --- !u!1 &458807711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,11 +4704,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Cat
-  trans: {fileID: 537514485}
+  location: {fileID: 537514485}
   chosen: 0
   currentTile: 0
   totalTiles: 0
-  speed: 0
+  speed: 2
+  wait: 3
 --- !u!1 &543038405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,6 +4985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Hove Station
   type: 1
+  location: {fileID: 0}
 --- !u!1 &564775388
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,6 +5106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Skywalker Drive
   type: 1
+  location: {fileID: 0}
 --- !u!1 &585731079
 GameObject:
   m_ObjectHideFlags: 0
@@ -5255,6 +5269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Falmer Station
   type: 1
+  location: {fileID: 0}
 --- !u!1 &629913113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,6 +5598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Opportunity Knocks 3
   type: 1
+  location: {fileID: 0}
 --- !u!1 &645571532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6304,6 +6320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Edison Water
   type: 1
+  location: {fileID: 0}
 --- !u!1 &693391751
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,6 +6366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Opportunity Knocks 1
   type: 2
+  location: {fileID: 693391752}
 --- !u!1 &702285247
 GameObject:
   m_ObjectHideFlags: 0
@@ -7199,6 +7217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Ibis Close
   type: 1
+  location: {fileID: 0}
 --- !u!1 &765155951
 GameObject:
   m_ObjectHideFlags: 0
@@ -8397,11 +8416,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Iron
-  trans: {fileID: 896446950}
+  location: {fileID: 896446950}
   chosen: 0
   currentTile: 0
   totalTiles: 0
-  speed: 0
+  speed: 2
+  wait: 3
 --- !u!1 &897219269
 GameObject:
   m_ObjectHideFlags: 0
@@ -8841,6 +8861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Tesla Power Co
   type: 1
+  location: {fileID: 0}
 --- !u!1 &922725844
 GameObject:
   m_ObjectHideFlags: 0
@@ -9203,6 +9224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Opportunity Knocks 2
   type: 2
+  location: {fileID: 0}
 --- !u!1 &968680139
 GameObject:
   m_ObjectHideFlags: 0
@@ -10207,6 +10229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Crusher Creek
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1034379341
 GameObject:
   m_ObjectHideFlags: 0
@@ -10744,6 +10767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Pot Luck 2
   type: 3
+  location: {fileID: 0}
 --- !u!1 &1076672109
 GameObject:
   m_ObjectHideFlags: 0
@@ -10789,6 +10813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Gangsters Paradise
   type: 1
+  location: {fileID: 1076672110}
 --- !u!1 &1078374774
 GameObject:
   m_ObjectHideFlags: 0
@@ -11191,6 +11216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Go
   type: 0
+  location: {fileID: 1123614068}
 --- !u!1 &1140686527
 GameObject:
   m_ObjectHideFlags: 0
@@ -11527,6 +11553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Portslade Station
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1175499033
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,6 +11599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Potter Avenue
   type: 1
+  location: {fileID: 1175499034}
 --- !u!1 &1203226665
 GameObject:
   m_ObjectHideFlags: 0
@@ -11915,6 +11943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Broyles Lane
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1228464422
 GameObject:
   m_ObjectHideFlags: 0
@@ -12550,6 +12579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Pot Luck 3
   type: 3
+  location: {fileID: 0}
 --- !u!1 &1255099426
 GameObject:
   m_ObjectHideFlags: 0
@@ -12660,6 +12690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: The Angels Delight
   type: 1
+  location: {fileID: 1256474207}
 --- !u!4 &1256474207
 Transform:
   m_ObjectHideFlags: 0
@@ -12705,6 +12736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: The Old Creek
   type: 1
+  location: {fileID: 1259666829}
 --- !u!4 &1259666829
 Transform:
   m_ObjectHideFlags: 0
@@ -12918,11 +12950,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Phone
-  trans: {fileID: 1286288973}
+  location: {fileID: 1286288973}
   chosen: 0
   currentTile: 0
   totalTiles: 0
-  speed: 0
+  speed: 2
+  wait: 3
 --- !u!1 &1288783531
 GameObject:
   m_ObjectHideFlags: 0
@@ -13891,6 +13924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Ghengis Cresent
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1376218001
 GameObject:
   m_ObjectHideFlags: 0
@@ -14313,6 +14347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Han Xin Gardens
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1403533248
 GameObject:
   m_ObjectHideFlags: 0
@@ -14848,6 +14883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Pot Luck 1
   type: 3
+  location: {fileID: 1446092621}
 --- !u!1 &1460972915
 GameObject:
   m_ObjectHideFlags: 0
@@ -15479,6 +15515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Income Tax
   type: 8
+  location: {fileID: 1554007565}
 --- !u!1 &1560102918
 GameObject:
   m_ObjectHideFlags: 0
@@ -15524,6 +15561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Super Tax
   type: 7
+  location: {fileID: 0}
 --- !u!1 &1565594628
 GameObject:
   m_ObjectHideFlags: 0
@@ -16115,6 +16153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Rey Lane
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1654923190
 GameObject:
   m_ObjectHideFlags: 0
@@ -16644,6 +16683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Gangster Drive
   type: 1
+  location: {fileID: 1695567897}
 --- !u!1 &1712658688
 GameObject:
   m_ObjectHideFlags: 0
@@ -17491,6 +17531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Sirat Mews
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1801658777
 GameObject:
   m_ObjectHideFlags: 0
@@ -17536,6 +17577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Go To Jail
   type: 5
+  location: {fileID: 0}
 --- !u!1 &1808445765
 GameObject:
   m_ObjectHideFlags: 0
@@ -17750,6 +17792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Turing Heights
   type: 1
+  location: {fileID: 0}
 --- !u!1 &1815459537
 GameObject:
   m_ObjectHideFlags: 0
@@ -20063,6 +20106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Bishop Drive
   type: 1
+  location: {fileID: 0}
 --- !u!1 &2028314273
 GameObject:
   m_ObjectHideFlags: 0
@@ -20385,6 +20429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Just Visiting
   type: 6
+  location: {fileID: 0}
 --- !u!1 &2047054534
 GameObject:
   m_ObjectHideFlags: 0
@@ -20739,11 +20784,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceName: Boot
-  trans: {fileID: 2057907409}
+  location: {fileID: 2057907409}
   chosen: 0
   currentTile: 0
   totalTiles: 0
-  speed: 0
+  speed: 2
+  wait: 3
 --- !u!1 &2066298724
 GameObject:
   m_ObjectHideFlags: 0
@@ -21070,6 +21116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Dunham Street
   type: 1
+  location: {fileID: 0}
 --- !u!1 &2116502124
 GameObject:
   m_ObjectHideFlags: 0
