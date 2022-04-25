@@ -5,7 +5,12 @@
       "ProjectGuid": "4b4ff184-707c-df13-5fa6-226d1822723d",
       "DisplayName": "Assembly-CSharp",
       "ColorIndex": 0
+    },
+    "7dc8c9ec-7940-ba46-3c4b-da1d547166f6": {
+      "ProjectGuid": "7dc8c9ec-7940-ba46-3c4b-da1d547166f6",
+      "DisplayName": "Tests",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
