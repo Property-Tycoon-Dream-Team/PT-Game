@@ -235,7 +235,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &12901704
 MonoBehaviour:
@@ -356,7 +356,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &34788610
 MonoBehaviour:
@@ -477,7 +477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &42987872
 MonoBehaviour:
@@ -834,7 +834,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &67302534
 MonoBehaviour:
@@ -970,7 +970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &96758710
 MonoBehaviour:
@@ -2261,7 +2261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &266592047
 MonoBehaviour:
@@ -2433,11 +2433,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceName: Battleship
   location: {fileID: 318185052}
+  target: {fileID: 0}
   chosen: 0
   currentTile: 0
   totalTiles: 0
   speed: 2
-  wait: 3
 --- !u!1 &322200077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,11 +2563,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceName: Top Hat
   location: {fileID: 344942682}
+  target: {fileID: 0}
   chosen: 0
   currentTile: 0
   totalTiles: 0
   speed: 2
-  wait: 3
 --- !u!1 &345536645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,7 +3651,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 10
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &421382696
 MonoBehaviour:
@@ -3697,7 +3697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &456063788
 MonoBehaviour:
@@ -4705,11 +4705,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceName: Cat
   location: {fileID: 537514485}
+  target: {fileID: 0}
   chosen: 0
   currentTile: 0
   totalTiles: 0
   speed: 2
-  wait: 3
 --- !u!1 &543038405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,7 +4969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &557459162
 MonoBehaviour:
@@ -5090,7 +5090,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &566354386
 MonoBehaviour:
@@ -5253,7 +5253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &588824771
 MonoBehaviour:
@@ -5582,7 +5582,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &639687916
 MonoBehaviour:
@@ -6304,7 +6304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &686262269
 MonoBehaviour:
@@ -7201,7 +7201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &759869365
 MonoBehaviour:
@@ -8417,11 +8417,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceName: Iron
   location: {fileID: 896446950}
+  target: {fileID: 0}
   chosen: 0
   currentTile: 0
   totalTiles: 0
   speed: 2
-  wait: 3
 --- !u!1 &897219269
 GameObject:
   m_ObjectHideFlags: 0
@@ -8845,7 +8845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &915113599
 MonoBehaviour:
@@ -9208,7 +9208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &957730527
 MonoBehaviour:
@@ -10213,7 +10213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1026489162
 MonoBehaviour:
@@ -10751,7 +10751,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1075157778
 MonoBehaviour:
@@ -11137,7 +11137,6 @@ Transform:
   - {fileID: 693391752}
   - {fileID: 1175499034}
   - {fileID: 1695567897}
-  - {fileID: 421382695}
   - {fileID: 2045706854}
   - {fileID: 566354385}
   - {fileID: 915113598}
@@ -11168,6 +11167,7 @@ Transform:
   - {fileID: 34788609}
   - {fileID: 1560102919}
   - {fileID: 1815245257}
+  - {fileID: 421382695}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11537,7 +11537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1167231426
 MonoBehaviour:
@@ -11927,7 +11927,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1220213163
 MonoBehaviour:
@@ -12563,7 +12563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1252838891
 MonoBehaviour:
@@ -12951,11 +12951,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceName: Phone
   location: {fileID: 1286288973}
+  target: {fileID: 0}
   chosen: 0
   currentTile: 0
   totalTiles: 0
   speed: 2
-  wait: 3
 --- !u!1 &1288783531
 GameObject:
   m_ObjectHideFlags: 0
@@ -13908,7 +13908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1351033382
 MonoBehaviour:
@@ -14331,7 +14331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1402370911
 MonoBehaviour:
@@ -15545,7 +15545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1560102920
 MonoBehaviour:
@@ -16137,7 +16137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1652165803
 MonoBehaviour:
@@ -17515,7 +17515,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1795203804
 MonoBehaviour:
@@ -17561,7 +17561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1801658779
 MonoBehaviour:
@@ -17776,7 +17776,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1815245258
 MonoBehaviour:
@@ -20090,7 +20090,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2019836535
 MonoBehaviour:
@@ -20413,7 +20413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2045706855
 MonoBehaviour:
@@ -20785,11 +20785,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceName: Boot
   location: {fileID: 2057907409}
+  target: {fileID: 0}
   chosen: 0
   currentTile: 0
   totalTiles: 0
   speed: 2
-  wait: 3
 --- !u!1 &2066298724
 GameObject:
   m_ObjectHideFlags: 0
@@ -21100,7 +21100,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1112788511}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2101824028
 MonoBehaviour:

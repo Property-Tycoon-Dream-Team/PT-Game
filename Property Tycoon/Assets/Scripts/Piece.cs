@@ -6,14 +6,12 @@ public class Piece : MonoBehaviour
 {
     public string pieceName;
     public Transform location;
-    public Transform target;
+    public GameObject target;
     public bool chosen;
     public int currentTile = 0;
     public int totalTiles = 0;
     public float speed;
     private GameManager gm;
-    public float wait = 3;
-    float timer;
     bool move = false;
 
     /*
@@ -26,16 +24,13 @@ public class Piece : MonoBehaviour
     void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("manager").GetComponent<GameManager>();
-        Debug.Log(gm);
     }
     void Update()
     {   
-        while (move && timer > 0)
+        while (move)
         {
-            timer -= Time.deltaTime;
             moveHelper();
         }
-        move = false;
     }
 
     /*
@@ -47,8 +42,9 @@ public class Piece : MonoBehaviour
     public void moveHelper()
     {
         Debug.Log((gm.getTileObject(currentTile)).name);
-        target = gm.getTileObject(currentTile).transform;
-        transform.position = target.position;
+        target = gm.getTileObject(currentTile);
+        transform.position = target.transform.position;
+        move = false;
     }
 
     /*
@@ -61,7 +57,6 @@ public class Piece : MonoBehaviour
     {
         totalTiles += amount; 
         currentTile = (totalTiles % 40 + 40) % 40;
-        timer = wait;
         move = true; 
     }
     

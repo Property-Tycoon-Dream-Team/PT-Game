@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
      */
     public GameObject getTileObject(int index)
     {
-        return (tileParent.transform.GetChild(index).gameObject);
+        return tileParent.transform.GetChild(index).gameObject;
     }
 
 
