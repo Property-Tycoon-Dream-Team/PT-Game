@@ -252,6 +252,7 @@ MonoBehaviour:
   tileName: Wookie Hole
   type: 1
   location: {fileID: 0}
+  cost: 140
 --- !u!1 &18294259
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +453,7 @@ MonoBehaviour:
   tileName: James Webb Way
   type: 1
   location: {fileID: 0}
+  cost: 350
 --- !u!1 &36116877
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +575,7 @@ MonoBehaviour:
   tileName: Yue Fei Square
   type: 1
   location: {fileID: 0}
+  cost: 220
 --- !u!1 &52457288
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +887,7 @@ MonoBehaviour:
   tileName: Brighton Station
   type: 1
   location: {fileID: 63051840}
+  cost: 200
 --- !u!1 &67302532
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +934,7 @@ MonoBehaviour:
   tileName: Free Parking
   type: 4
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &94559225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1071,7 @@ MonoBehaviour:
   tileName: Picard Avenue
   type: 1
   location: {fileID: 0}
+  cost: 260
 --- !u!1 &105571715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,6 +2710,7 @@ MonoBehaviour:
   tileName: Mulan Rouge
   type: 1
   location: {fileID: 0}
+  cost: 220
 --- !u!1 &277029841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2871,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  move: 0
 --- !u!1 &322200077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,6 +3003,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  move: 0
 --- !u!1 &345536645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,6 +4488,7 @@ MonoBehaviour:
   tileName: Jail
   type: 6
   location: {fileID: 421382695}
+  cost: 0
 --- !u!1 &456063786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,6 +4535,7 @@ MonoBehaviour:
   tileName: Shatner Close
   type: 1
   location: {fileID: 0}
+  cost: 260
 --- !u!1 &458807711
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,6 +5798,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  move: 0
 --- !u!1 &543038405
 GameObject:
   m_ObjectHideFlags: 0
@@ -6063,6 +6075,7 @@ MonoBehaviour:
   tileName: Hove Station
   type: 1
   location: {fileID: 0}
+  cost: 200
 --- !u!1 &564775388
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,6 +6197,7 @@ MonoBehaviour:
   tileName: Skywalker Drive
   type: 1
   location: {fileID: 0}
+  cost: 140
 --- !u!1 &585731079
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,6 +6440,7 @@ MonoBehaviour:
   tileName: Falmer Station
   type: 1
   location: {fileID: 0}
+  cost: 200
 --- !u!1 &618709122
 GameObject:
   m_ObjectHideFlags: 0
@@ -6834,6 +6849,7 @@ MonoBehaviour:
   tileName: Opportunity Knocks 3
   type: 1
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &640664620
 GameObject:
   m_ObjectHideFlags: 0
@@ -7714,6 +7730,7 @@ MonoBehaviour:
   tileName: Edison Water
   type: 1
   location: {fileID: 0}
+  cost: 150
 --- !u!1 &693391751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7760,6 +7777,7 @@ MonoBehaviour:
   tileName: Opportunity Knocks 1
   type: 2
   location: {fileID: 693391752}
+  cost: 0
 --- !u!1 &700249604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,6 +8708,7 @@ MonoBehaviour:
   tileName: Ibis Close
   type: 1
   location: {fileID: 0}
+  cost: 320
 --- !u!1 &765155951
 GameObject:
   m_ObjectHideFlags: 0
@@ -10081,6 +10100,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  move: 0
 --- !u!1 &897219269
 GameObject:
   m_ObjectHideFlags: 0
@@ -10521,6 +10541,7 @@ MonoBehaviour:
   tileName: Tesla Power Co
   type: 1
   location: {fileID: 0}
+  cost: 150
 --- !u!1 &922725844
 GameObject:
   m_ObjectHideFlags: 0
@@ -11017,6 +11038,7 @@ MonoBehaviour:
   tileName: Opportunity Knocks 2
   type: 2
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &968680139
 GameObject:
   m_ObjectHideFlags: 0
@@ -12022,6 +12044,7 @@ MonoBehaviour:
   tileName: Crusher Creek
   type: 1
   location: {fileID: 0}
+  cost: 280
 --- !u!1 &1034379341
 GameObject:
   m_ObjectHideFlags: 0
@@ -12851,6 +12874,7 @@ MonoBehaviour:
   tileName: Pot Luck 2
   type: 3
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &1076672109
 GameObject:
   m_ObjectHideFlags: 0
@@ -12897,6 +12921,7 @@ MonoBehaviour:
   tileName: Gangsters Paradise
   type: 1
   location: {fileID: 1076672110}
+  cost: 60
 --- !u!1 &1078374774
 GameObject:
   m_ObjectHideFlags: 0
@@ -13300,6 +13325,7 @@ MonoBehaviour:
   tileName: Go
   type: 0
   location: {fileID: 1123614068}
+  cost: 0
 --- !u!1 &1140686527
 GameObject:
   m_ObjectHideFlags: 0
@@ -13716,6 +13742,7 @@ MonoBehaviour:
   tileName: Portslade Station
   type: 1
   location: {fileID: 0}
+  cost: 200
 --- !u!1 &1175499033
 GameObject:
   m_ObjectHideFlags: 0
@@ -13762,6 +13789,7 @@ MonoBehaviour:
   tileName: Potter Avenue
   type: 1
   location: {fileID: 1175499034}
+  cost: 100
 --- !u!1 &1203226665
 GameObject:
   m_ObjectHideFlags: 0
@@ -14106,6 +14134,7 @@ MonoBehaviour:
   tileName: Broyles Lane
   type: 1
   location: {fileID: 0}
+  cost: 200
 --- !u!1 &1228464422
 GameObject:
   m_ObjectHideFlags: 0
@@ -14742,6 +14771,7 @@ MonoBehaviour:
   tileName: Pot Luck 3
   type: 3
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &1255099426
 GameObject:
   m_ObjectHideFlags: 0
@@ -14853,6 +14883,7 @@ MonoBehaviour:
   tileName: The Angels Delight
   type: 1
   location: {fileID: 1256474207}
+  cost: 100
 --- !u!4 &1256474207
 Transform:
   m_ObjectHideFlags: 0
@@ -14899,6 +14930,7 @@ MonoBehaviour:
   tileName: The Old Creek
   type: 1
   location: {fileID: 1259666829}
+  cost: 60
 --- !u!4 &1259666829
 Transform:
   m_ObjectHideFlags: 0
@@ -15252,6 +15284,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  move: 0
 --- !u!1 &1288783531
 GameObject:
   m_ObjectHideFlags: 0
@@ -16300,6 +16333,7 @@ MonoBehaviour:
   tileName: Ghengis Cresent
   type: 1
   location: {fileID: 0}
+  cost: 300
 --- !u!1 &1376218001
 GameObject:
   m_ObjectHideFlags: 0
@@ -16935,6 +16969,7 @@ MonoBehaviour:
   tileName: Han Xin Gardens
   type: 1
   location: {fileID: 0}
+  cost: 240
 --- !u!1 &1403533248
 GameObject:
   m_ObjectHideFlags: 0
@@ -17683,6 +17718,7 @@ MonoBehaviour:
   tileName: Pot Luck 1
   type: 3
   location: {fileID: 1446092621}
+  cost: 0
 --- !u!1 &1460972915
 GameObject:
   m_ObjectHideFlags: 0
@@ -18660,6 +18696,7 @@ MonoBehaviour:
   tileName: Income Tax
   type: 8
   location: {fileID: 1554007565}
+  cost: 0
 --- !u!1 &1560102918
 GameObject:
   m_ObjectHideFlags: 0
@@ -18706,6 +18743,7 @@ MonoBehaviour:
   tileName: Super Tax
   type: 7
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &1565594628
 GameObject:
   m_ObjectHideFlags: 0
@@ -19614,6 +19652,7 @@ MonoBehaviour:
   tileName: Rey Lane
   type: 1
   location: {fileID: 0}
+  cost: 160
 --- !u!1 &1652662683
 GameObject:
   m_ObjectHideFlags: 0
@@ -20164,7 +20203,7 @@ GameObject:
   - component: {fileID: 1695567897}
   - component: {fileID: 1695567898}
   m_Layer: 0
-  m_Name: Gangster Drive
+  m_Name: Granger Drive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20196,9 +20235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc6617363d57414fbf6e48a7f5867d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileName: Gangster Drive
+  tileName: Granger Drive
   type: 1
   location: {fileID: 1695567897}
+  cost: 120
 --- !u!1 &1696178633
 GameObject:
   m_ObjectHideFlags: 0
@@ -21180,6 +21220,7 @@ MonoBehaviour:
   tileName: Sirat Mews
   type: 1
   location: {fileID: 0}
+  cost: 300
 --- !u!1 &1801658777
 GameObject:
   m_ObjectHideFlags: 0
@@ -21226,6 +21267,7 @@ MonoBehaviour:
   tileName: Go To Jail
   type: 5
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &1808445765
 GameObject:
   m_ObjectHideFlags: 0
@@ -21441,6 +21483,7 @@ MonoBehaviour:
   tileName: Turing Heights
   type: 1
   location: {fileID: 0}
+  cost: 400
 --- !u!1 &1815459537
 GameObject:
   m_ObjectHideFlags: 0
@@ -24368,6 +24411,7 @@ MonoBehaviour:
   tileName: Bishop Drive
   type: 1
   location: {fileID: 0}
+  cost: 180
 --- !u!1 &2028314273
 GameObject:
   m_ObjectHideFlags: 0
@@ -24691,6 +24735,7 @@ MonoBehaviour:
   tileName: Just Visiting
   type: 6
   location: {fileID: 0}
+  cost: 0
 --- !u!1 &2047054534
 GameObject:
   m_ObjectHideFlags: 0
@@ -25051,6 +25096,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  move: 0
 --- !u!1 &2066298724
 GameObject:
   m_ObjectHideFlags: 0
@@ -25378,6 +25424,7 @@ MonoBehaviour:
   tileName: Dunham Street
   type: 1
   location: {fileID: 0}
+  cost: 180
 --- !u!1 &2116502124
 GameObject:
   m_ObjectHideFlags: 0

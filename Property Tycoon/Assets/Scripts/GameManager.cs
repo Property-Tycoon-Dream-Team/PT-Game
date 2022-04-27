@@ -431,10 +431,11 @@ public class GameManager : MonoBehaviour
      */
     public bool purchase()
     {   
+        BoardTile prop = selectedProperty;
         if (activePlayer.gamePiece.getTotalTiles() >= 40)
         {
             int cTile = activePlayer.gamePiece.getCurrentTile();
-            if (activePlayer.addToProperties(Board.findTile(cTile)))
+            if (activePlayer.addToProperties(selectedProperty))
             {
                 return true;
             }
@@ -454,26 +455,25 @@ public class GameManager : MonoBehaviour
     {
         BoardTile prop = selectedProperty; // make current tile?!
 
-        PropertyInfo pi = prop.propertyInfo;
-        propColour currentpc = pi.getPC();
+        propColour currentpc = prop.getPC();
         int count = 0;
         foreach (var property in activePlayer.ownedProperties)
         {
             //checking to see if player has all 3 property of the same colour before being allowed to upgrade
-            if (property.propertyInfo.getPC() == currentpc)
+            if (prop.getPC() == currentpc)
             {
                 count++;
                 if (count == 3)
                 {
                     //checking if a hotel needs to be made or a house
-                    if (!pi.checkHotel(currentpc))
+                    if (!prop.checkHotel(currentpc))
                     {
-                        int currentHouses = pi.getNumOfHouse();
-                        pi.setNumOfHouse(currentHouses + 1);
+                        int currentHouses = prop.getNumOfHouse();
+                        prop.setNumOfHouse(currentHouses + 1);
                     }
                     else
                     {
-                        pi.setHotel(true);
+                        prop.setHotel(true);
                     }
                 }
             }
@@ -517,7 +517,7 @@ public class GameManager : MonoBehaviour
     public bool mortgage()
     {
         BoardTile bt = tiles[0]; // make current tile?!
-        if (activePlayer.addToMorgagedProperties(bt))
+        if (activePlayer.addToMortgagedProperties(bt))
         {
             return true;
         }
@@ -566,8 +566,8 @@ public class GameManager : MonoBehaviour
     {
         int rentTile = activePlayer.gamePiece.getCurrentTile();
         BoardTile rentT = getBoardTileFromIndex(rentTile);
-        Player rentOwner = rentT.propertyInfo.getOwner();
-        int amount = Rent.getRent(rentTile, rentT.propertyInfo.getNumOfHouse()); //check this one g
+        Player rentOwner = rentT.getOwner();
+        int amount = Rent.getRent(rentTile, rentT.getNumOfHouse()); //check this one g
 
         if (activePlayer.getCash() >= amount)
         {

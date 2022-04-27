@@ -34,7 +34,7 @@ public class Player
     public bool addToProperties(BoardTile bt)
     {
         // check if the property is already owned. 
-        if ((ownedProperties.Contains(bt)) || (cash < bt.getPropertyInfo().getCost())){
+        if ((ownedProperties.Contains(bt)) || (cash < bt.getCost())){
             return false; 
         }
         // adds property to the property list.
@@ -42,8 +42,8 @@ public class Player
         {
             ownedProperties.Add(bt);
             // remove property value from players cash pile.
-            addCash(-(bt.getPropertyInfo().getCost()));
-            bt.propertyInfo.setOwner(this);
+            addCash(-(bt.getCost()));
+            bt.setOwner(this);
 
             return true; 
         }
@@ -55,7 +55,7 @@ public class Player
      * Returns: a bool value, if the player succesfully mortgaged the property. 
      * Purpose: Used to mortgage a property to get some cash. 
      */
-    public bool addToMorgagedProperties(BoardTile bt)
+    public bool addToMortgagedProperties(BoardTile bt)
     {
         // check if the player owns the property and if the property is already mortgaged.
         if((!(ownedProperties.Contains(bt))) || (mortgagedProperties.Contains(bt)))
@@ -64,11 +64,12 @@ public class Player
         }
         // remove from owned properties, add mortgaged tag to propertyInfo, add to mortgaged properties.
         ownedProperties.Remove(bt);
-        bt.propertyInfo.mortgage();
+        bt.changeMortgageStatus();
         mortgagedProperties.Add(bt);
+        bt.removeOwner();
         
         // add half of the properties value to players cash pile. 
-        addCash((bt.propertyInfo.getCost())/2);
+        addCash((bt.getCost())/2);
         return true; 
     }
 
@@ -81,16 +82,16 @@ public class Player
     public bool removeMortgage(BoardTile bt)
     {   
         // check if property is mortgaged and if the player has enough cash to unmortgage. 
-        if((cash < (bt.propertyInfo.getCost())/2) || (!(mortgagedProperties.Contains(bt))))
+        if((cash < (bt.getCost())/2) || (!(mortgagedProperties.Contains(bt))))
         {
             return false; 
         }
         // remove property from mortgagedProperties, remmove mortgage tag from propertyInfo, add property to ownedProperties.
         mortgagedProperties.Remove(bt);
-        bt.propertyInfo.unmortgage();
         ownedProperties.Add(bt);
         // add half propery value to players cash. 
-        addCash(-((bt.propertyInfo.getCost())/2));
+        addCash(-((bt.getCost())/2));
+        bt.setOwner(this);
         return true; 
     }
 
@@ -107,9 +108,9 @@ public class Player
         {   
             // remove from mortgaged list, remove mortgage tag from propertyInfo, adds half of property value to cash pile.
             mortgagedProperties.Remove(bt);
-            bt.propertyInfo.unmortgage();
-            bt.propertyInfo.removeOwner();
-            addCash((bt.propertyInfo.getCost())/2);
+            bt.changeMortgageStatus();
+            bt.removeOwner();
+            addCash((bt.getCost())/2);
             return true; 
         }
         // check if property is in ownedProperties list.
@@ -117,8 +118,8 @@ public class Player
         {
             // remove from properties list, adds cash to cash pile. 
             ownedProperties.Remove(bt);
-            bt.propertyInfo.removeOwner();
-            addCash(bt.propertyInfo.getCost());
+            bt.removeOwner();
+            addCash(bt.getCost());
             return true;
         }
         else return false;
