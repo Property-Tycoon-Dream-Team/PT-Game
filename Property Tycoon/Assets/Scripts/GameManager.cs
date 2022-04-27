@@ -197,6 +197,7 @@ public class GameManager : MonoBehaviour
         messager.NewMessage(activePlayer.playerName + " rolled: " + dice.value);
 
         activePlayer.gamePiece.movePiece(dice.value);
+        UIManager.UpdatePropertyList();
     }
 
     /*
