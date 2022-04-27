@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] playerInfoEntry;
     public BoardTile[] tiles;
     public GameObject tileParent;
-    public PropertyInfo selectedProperty;
+    public BoardTile selectedProperty;
 
     private Player[] players;
     private int activePlayerID;
