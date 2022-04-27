@@ -79,6 +79,7 @@ public class GameUIManager : MonoBehaviour
 
     public void OnMortgageClicked()
     {
+        Debug.Log("yo");
         manager.mortgage();
     }
 

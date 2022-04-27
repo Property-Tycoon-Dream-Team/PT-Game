@@ -430,19 +430,26 @@ public class GameManager : MonoBehaviour
      * Returns: true if the player successfully purchases the property, false if unsuccessful.
      * Purpose: purchases the property that the current player lands on
      */
-    public bool purchase()
+    public void purchase()
     {   
         BoardTile prop = selectedProperty;
-        if (activePlayer.gamePiece.getTotalTiles() >= 40)
+        if (activePlayer.gamePiece.getTotalTiles() < 40)
         {
-            int cTile = activePlayer.gamePiece.getCurrentTile();
-            if (activePlayer.addToProperties(selectedProperty))
-            {
-                return true;
-            }
-            else return false;  
+            messager.NewMessage("Cannot purchase property until you've completed one lap of the board");
         }
-        else return false; 
+        if (prop.type != tileType.PROPERTY)
+        {
+            messager.NewMessage("Cannot purchase a non property tile");
+        }
+
+        if (activePlayer.addToProperties(selectedProperty))
+            {
+                messager.NewMessage(activePlayer.playerName + "purchased" + prop.tileName);
+            }
+        else
+        {
+            messager.NewMessage(activePlayer.playerName + "is unable to purchase" + prop.tileName);
+        }
     }
     
 
