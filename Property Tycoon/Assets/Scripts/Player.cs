@@ -58,19 +58,21 @@ public class Player
     public bool addToMortgagedProperties(BoardTile bt)
     {
         // check if the player owns the property and if the property is already mortgaged.
-        if((!(ownedProperties.Contains(bt))) || (mortgagedProperties.Contains(bt)))
+        if ((!ownedProperties.Contains(bt)) || (mortgagedProperties.Contains(bt)))
         {
             return false;
         }
-        // remove from owned properties, add mortgaged tag to propertyInfo, add to mortgaged properties.
-        ownedProperties.Remove(bt);
-        bt.changeMortgageStatus();
-        mortgagedProperties.Add(bt);
-        bt.removeOwner();
-        
-        // add half of the properties value to players cash pile. 
-        addCash((bt.getCost())/2);
-        return true; 
+        else
+        {
+            // remove from owned properties, add mortgaged tag to propertyInfo, add to mortgaged properties.
+            ownedProperties.Remove(bt);
+            bt.changeMortgageStatus();
+            mortgagedProperties.Add(bt);
+
+            // add half of the properties value to players cash pile. 
+            addCash((bt.getCost()) / 2);
+            return true;
+        }
     }
 
     /*
@@ -82,16 +84,17 @@ public class Player
     public bool removeMortgage(BoardTile bt)
     {   
         // check if property is mortgaged and if the player has enough cash to unmortgage. 
-        if((cash < (bt.getCost())/2) || (!(mortgagedProperties.Contains(bt))))
+        if((cash < (bt.getCost())/2) || (!mortgagedProperties.Contains(bt)))
         {
             return false; 
         }
         // remove property from mortgagedProperties, remmove mortgage tag from propertyInfo, add property to ownedProperties.
         mortgagedProperties.Remove(bt);
+        bt.changeMortgageStatus();
         ownedProperties.Add(bt);
+        bt.setOwner(this);
         // add half propery value to players cash. 
         addCash(-((bt.getCost())/2));
-        bt.setOwner(this);
         return true; 
     }
 
@@ -108,7 +111,7 @@ public class Player
         {   
             // remove from mortgaged list, remove mortgage tag from propertyInfo, adds half of property value to cash pile.
             mortgagedProperties.Remove(bt);
-            bt.changeMortgageStatus();
+            bt.mortgaged = false;
             bt.removeOwner();
             addCash((bt.getCost())/2);
             return true; 
