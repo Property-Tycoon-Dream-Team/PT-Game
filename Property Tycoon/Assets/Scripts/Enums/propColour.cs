@@ -9,5 +9,6 @@ public enum propColour
     RED,
     YELLOW,
     GREEN,
-    DEEPBLUE
+    DEEPBLUE,
+    NOCOLOUR
 }

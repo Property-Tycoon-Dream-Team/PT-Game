@@ -253,6 +253,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 140
+  pc: 3
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &18294259
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +458,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 350
+  pc: 9
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &36116877
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +584,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 220
+  pc: 6
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &52457288
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +900,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 63051840}
   cost: 200
+  pc: 1
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &67302532
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +951,10 @@ MonoBehaviour:
   type: 4
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &94559225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1092,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 260
+  pc: 7
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &105571715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2740,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 220
+  pc: 6
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &277029841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,6 +4522,10 @@ MonoBehaviour:
   type: 6
   location: {fileID: 421382695}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &456063786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4541,6 +4573,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 260
+  pc: 7
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &458807711
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,6 +6117,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 200
+  pc: 1
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &564775388
 GameObject:
   m_ObjectHideFlags: 0
@@ -6203,6 +6243,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 140
+  pc: 3
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &585731079
 GameObject:
   m_ObjectHideFlags: 0
@@ -6446,6 +6490,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 200
+  pc: 1
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &618709122
 GameObject:
   m_ObjectHideFlags: 0
@@ -6855,6 +6903,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &640664620
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,6 +7788,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 150
+  pc: 4
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &693391751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7783,6 +7839,10 @@ MonoBehaviour:
   type: 2
   location: {fileID: 693391752}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &700249604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8714,6 +8774,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 320
+  pc: 8
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &765155951
 GameObject:
   m_ObjectHideFlags: 0
@@ -10547,6 +10611,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 150
+  pc: 4
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &922725844
 GameObject:
   m_ObjectHideFlags: 0
@@ -11042,8 +11110,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Opportunity Knocks 2
   type: 2
-  location: {fileID: 0}
+  location: {fileID: 957730526}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &968680139
 GameObject:
   m_ObjectHideFlags: 0
@@ -12050,6 +12122,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 280
+  pc: 7
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1034379341
 GameObject:
   m_ObjectHideFlags: 0
@@ -12880,6 +12956,10 @@ MonoBehaviour:
   type: 3
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1076672109
 GameObject:
   m_ObjectHideFlags: 0
@@ -12927,6 +13007,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 1076672110}
   cost: 60
+  pc: 0
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1078374774
 GameObject:
   m_ObjectHideFlags: 0
@@ -13331,6 +13415,10 @@ MonoBehaviour:
   type: 0
   location: {fileID: 1123614068}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1140686527
 GameObject:
   m_ObjectHideFlags: 0
@@ -13748,6 +13836,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 200
+  pc: 1
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1175499033
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,6 +13887,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 1175499034}
   cost: 100
+  pc: 2
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1203226665
 GameObject:
   m_ObjectHideFlags: 0
@@ -14138,8 +14234,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Broyles Lane
   type: 1
-  location: {fileID: 0}
+  location: {fileID: 1220213162}
   cost: 200
+  pc: 5
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1228464422
 GameObject:
   m_ObjectHideFlags: 0
@@ -14777,6 +14877,10 @@ MonoBehaviour:
   type: 3
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1255099426
 GameObject:
   m_ObjectHideFlags: 0
@@ -14889,6 +14993,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 1256474207}
   cost: 100
+  pc: 2
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!4 &1256474207
 Transform:
   m_ObjectHideFlags: 0
@@ -14936,6 +15044,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 1259666829}
   cost: 60
+  pc: 0
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!4 &1259666829
 Transform:
   m_ObjectHideFlags: 0
@@ -16339,6 +16451,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 300
+  pc: 8
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1376218001
 GameObject:
   m_ObjectHideFlags: 0
@@ -16975,6 +17091,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 240
+  pc: 6
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1403533248
 GameObject:
   m_ObjectHideFlags: 0
@@ -17724,6 +17844,10 @@ MonoBehaviour:
   type: 3
   location: {fileID: 1446092621}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1460972915
 GameObject:
   m_ObjectHideFlags: 0
@@ -18702,6 +18826,10 @@ MonoBehaviour:
   type: 8
   location: {fileID: 1554007565}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1560102918
 GameObject:
   m_ObjectHideFlags: 0
@@ -18749,6 +18877,10 @@ MonoBehaviour:
   type: 7
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1565594628
 GameObject:
   m_ObjectHideFlags: 0
@@ -19658,6 +19790,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 160
+  pc: 3
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1652662683
 GameObject:
   m_ObjectHideFlags: 0
@@ -20244,6 +20380,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 1695567897}
   cost: 120
+  pc: 2
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1696178633
 GameObject:
   m_ObjectHideFlags: 0
@@ -21226,6 +21366,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 300
+  pc: 8
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1801658777
 GameObject:
   m_ObjectHideFlags: 0
@@ -21273,6 +21417,10 @@ MonoBehaviour:
   type: 5
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1808445765
 GameObject:
   m_ObjectHideFlags: 0
@@ -21489,6 +21637,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 400
+  pc: 9
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &1815459537
 GameObject:
   m_ObjectHideFlags: 0
@@ -24417,6 +24569,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 180
+  pc: 5
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &2028314273
 GameObject:
   m_ObjectHideFlags: 0
@@ -24741,6 +24897,10 @@ MonoBehaviour:
   type: 6
   location: {fileID: 0}
   cost: 0
+  pc: 10
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &2047054534
 GameObject:
   m_ObjectHideFlags: 0
@@ -25430,6 +25590,10 @@ MonoBehaviour:
   type: 1
   location: {fileID: 0}
   cost: 180
+  pc: 5
+  hotel: 0
+  numOfHouse: 0
+  mortgaged: 0
 --- !u!1 &2116502124
 GameObject:
   m_ObjectHideFlags: 0
