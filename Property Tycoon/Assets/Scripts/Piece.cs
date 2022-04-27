@@ -12,7 +12,7 @@ public class Piece : MonoBehaviour
     public int totalTiles = 0;
     public float speed;
     private GameManager gm;
-    bool move = false;
+    public bool move = false;
 
     /*
      * Function: Update (MonoBehavior function - called every frame)

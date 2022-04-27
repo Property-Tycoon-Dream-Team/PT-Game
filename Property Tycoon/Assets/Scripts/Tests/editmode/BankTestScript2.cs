@@ -4,12 +4,11 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class DiceTestScript
+static public class BankTestScript
 {
     [Test]
-    public void TestRollDice()
+    public static void TestMoney()
     {
-        
+        Assert.That(Bank.Money == 50000);
     }
-
 }

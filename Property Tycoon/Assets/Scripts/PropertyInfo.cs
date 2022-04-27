@@ -5,7 +5,7 @@ using UnityEngine;
 public class PropertyInfo
 {
     public int cost;
-    Player owner;
+    public Player owner;
     public int numOfHouse;
     public bool hotel;
     public propColour pc;
@@ -25,7 +25,7 @@ public class PropertyInfo
         // Return whether this property is allowed to have hotel or not
         int currentHouseCount = getNumOfHouse();
 
-        if (!(pc.Equals("STATION") && pc.Equals("UTILITIES")))
+        if (!(pc.Equals(propColour.STATION) && pc.Equals(propColour.UTILITIES)))
         {
             //Checks to see if there are 4 houses on the property ---> Might be the case that you would have to check to see if all 3 properties have 4 houses EACH but not specified...
             if (currentHouseCount == 4)
@@ -54,9 +54,9 @@ public class PropertyInfo
      * Returns: boolean value, whether the property is a utility or not
      * Purpose: to check if the propery is a utility
      */
-    bool checkUtility(propColour pc)
+    public bool checkUtility(propColour pc)
     {
-        if (pc.Equals("UTILITIES"))
+        if (pc.Equals(propColour.UTILITIES))
         {
             utility = true;
             return true;
@@ -70,9 +70,9 @@ public class PropertyInfo
      * Returns: boolean value, whether the property is a station or not
      * Purpose: to check if the propery is a station
      */
-    bool checkStation(propColour pc)
+    public bool checkStation(propColour pc)
     {
-        if (pc.Equals("STATION"))
+        if (pc.Equals(propColour.STATION))
         {
             station = true;
             return true;

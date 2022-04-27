@@ -15,7 +15,22 @@
       "ProjectGuid": "b05008aa-ae52-3026-1590-91c25f92523b",
       "DisplayName": "NewAssembly",
       "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "2618535b-230b-43be-c70d-d7d33878f4df": {
+      "ProjectGuid": "2618535b-230b-43be-c70d-d7d33878f4df",
+      "DisplayName": "editmode",
+      "ColorIndex": 3
+    },
+    "0be4cb71-7ea0-27c4-b6d1-7f4ba8a3e18c": {
+      "ProjectGuid": "0be4cb71-7ea0-27c4-b6d1-7f4ba8a3e18c",
+      "DisplayName": "playmode",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }
