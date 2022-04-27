@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CardStack
 {
-    Card[] cards;
-    Card activeCard;
+    public Card[] cards;
+    public Card activeCard;
     int type;
     int pos = 0;
 
@@ -15,7 +15,7 @@ public class CardStack
      * Returns: Card instance containing the information about the card drawn
      * Purpose: emulates picking up a card
      */
-    Card popNextCard()
+   public Card popNextCard()
     {
         // Give next card (in higher logic set Player jailCard++ if is jail card)
 
@@ -34,7 +34,7 @@ public class CardStack
         return activeCard;
     }
 
-    void returnActiveCard()
+    public bool returnActiveCard()
     {
         // Returns card to bottom of deck 
 
@@ -45,7 +45,9 @@ public class CardStack
             cards[cards.Length - 1] = activeCard; // card.length is subtracted by 1 to accomidate for the 0 index which prevents an out of bounds error
             activeCard.isActionComplete = false; 
             activeCard = null;
+            return true;
         }
+        else return false;
     }
 
     /*
@@ -54,7 +56,7 @@ public class CardStack
      * Returns: N/A
      * Purpose: shuffles the cards in this deck
      */
-    void shuffle()
+    public void shuffle()
     {
         Card temp;
         // Shuffles cards

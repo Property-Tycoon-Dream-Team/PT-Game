@@ -9,12 +9,24 @@ namespace Tests
 {
     public class PieceTestScript
     {
+
+        private Piece piece;
+
+        [SetUp]
+        public void SetUp()
+        {
+            piece = new Piece();
+        }
+
+        [Test]
+        public void TestMoveHelper()
+        {
+            
+        }
        
         [Test]
         public void TestMovePiece()
-        {
-            Piece piece = new Piece();
-
+        {           
             int amount = 4;
             int tt = piece.totalTiles;
 
@@ -29,8 +41,6 @@ namespace Tests
         [Test]
         public void TestGetCurrentTile()
         {
-            Piece piece = new Piece();
-
             int amount = 10;
             piece.movePiece(amount);
 
@@ -40,8 +50,6 @@ namespace Tests
         [Test]
         public void TestGetTotalTiles()
         {
-            Piece piece = new Piece();
-
             int amount = 5;
             int tt = piece.totalTiles;
 

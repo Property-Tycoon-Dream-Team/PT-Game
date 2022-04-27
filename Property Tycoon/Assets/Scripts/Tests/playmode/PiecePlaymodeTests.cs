@@ -4,24 +4,20 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+public class PiecePlaymodeTestScript
+{ 
+    [UnityTest]
+    public IEnumerator TestMoveHelper()
+    {            
+        var go = new GameObject();
+        var piece = go.AddComponent<Piece>();
 
-namespace Tests
-{
-    public class PiecePlaymodeTestScript
-    {
-        [UnityTest]
-        public IEnumerator TestMoveHelper()
-        {
-            var go = new GameObject();
-            var piece = go.AddComponent<Piece>();
+        piece.move = true; ;
+        piece.moveHelper();
 
-            piece.movePiece(4);
-            piece.moveHelper();
+        yield return new WaitForSecondsRealtime(5);
 
-            yield return new WaitForSecondsRealtime(5);
-
-            Assert.AreEqual(piece.transform.position, go.transform.position);
-            Assert.That(piece.move == false);
+        Assert.AreEqual(piece.transform.position, go.transform.position);
+        Assert.IsFalse(piece.move);
         }
     }
-}
