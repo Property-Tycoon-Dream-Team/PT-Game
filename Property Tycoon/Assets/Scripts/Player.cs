@@ -124,6 +124,7 @@ public class Player
         else return false;
     }
 
+
     /*
      * Function: addCash
      * Parameters: amt, the amount of cash to add/ remove from cash pile. 
@@ -133,5 +134,10 @@ public class Player
     public void addCash(int amt)
     {
         cash += amt;
+    }
+
+    public int getCash()
+    {
+        return cash;
     }
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public int freeParkingValue;
     public GameObject mainMenu;
+    public GameUIManager UIManager;
 
     public GameObject gameMenu;
     public Transform playerIndicator;
@@ -209,6 +210,18 @@ public class GameManager : MonoBehaviour
         return tileParent.transform.GetChild(index).gameObject;
     }
 
+    /*
+     * Function: getBoardTileFromIndex
+     * Parameters: int index, the location of the tile on the board
+     * Returns: BoardTile which is the boardtile in that index
+     * Purpose: For getting the location of the board tile from an index.
+     */
+    public BoardTile getBoardTileFromIndex(int index)
+    {
+        GameObject bt = tileParent.transform.GetChild(index).gameObject;
+        return bt.GetComponent<BoardTile>();
+    }
+
 
     /*
      * Function: onDropdownChange
@@ -350,6 +363,8 @@ public class GameManager : MonoBehaviour
         activePlayerID = 0;
         activePlayer = players[activePlayerID];
         
+        UIManager.UpdatePropertyList();
+
         prettyDebugPlayers();
     }
 
@@ -540,6 +555,29 @@ public class GameManager : MonoBehaviour
         }
         else return false;
     }
+    
+    /*
+    * Function: rent
+    * Parameters: BoardTile bt - the property in which is being sold.
+    * Returns: a bool value, if the player succesfully sells the property. 
+    * Purpose: calls the sellProperty for the active player. 
+    */
+    public void rent()
+    {
+        int rentTile = activePlayer.gamePiece.getCurrentTile();
+        BoardTile rentT = getBoardTileFromIndex(rentTile);
+        Player rentOwner = rentT.propertyInfo.getOwner();
+        int amount = Rent.getRent(rentTile, rentT.propertyInfo.getNumOfHouse()); //check this one g
+
+        if (activePlayer.getCash() >= amount)
+        {
+            activePlayer.addCash(-(amount));
+        }
+
+
+        //else - gotta sell properties n morgage etc etc. 
+        
+    }
 
     /*
     * Function: endTurn
@@ -560,6 +598,10 @@ public class GameManager : MonoBehaviour
 
         activePlayer = players[activePlayerID];
         messager.NewMessage("Now playing: " + activePlayer.playerName);
+
+        UIManager.UpdatePropertyList();
+
+
     }
 
     /*
