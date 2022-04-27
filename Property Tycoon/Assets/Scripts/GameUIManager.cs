@@ -7,10 +7,22 @@ public class GameUIManager : MonoBehaviour
 {
     public GameManager manager;
     public GameObject propListParent;
+    List<BoardTile> playersTiles;
 
     public void UpdatePropertyList()
     {
-        //manager;
+        playersTiles = manager.activePlayer.ownedProperties;
+
+        for (int i = 0; i < propListParent.transform.childCount; i++)
+        {
+            if (i < playersTiles.Count)
+            {
+                propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = playersTiles[i].name;
+                propListParent.transform.GetChild(i).gameObject.SetActive(true);
+                continue;
+            }
+            propListParent.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 
     public void PropertySelect(int childNum)
