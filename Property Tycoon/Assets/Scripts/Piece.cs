@@ -43,7 +43,7 @@ public class Piece : MonoBehaviour
     {
         Debug.Log((gm.getTileObject(currentTile)).name);
         target = gm.getTileObject(currentTile);
-        transform.position = target.transform.position;
+        transform.position = target.transform.position + new Vector3(0f, 0.1f, 0f);
         move = false;
     }
 
