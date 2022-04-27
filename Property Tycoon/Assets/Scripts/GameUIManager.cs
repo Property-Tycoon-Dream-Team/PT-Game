@@ -7,14 +7,19 @@ public class GameUIManager : MonoBehaviour
 {
     public GameManager manager;
     public GameObject propListParent;
+    public Button[] gameButtons;
+
     List<BoardTile> playersTiles;
 
     public void UpdatePropertyList()
     {
+        ToggleGameButtons(false);
+
         playersTiles = manager.activePlayer.ownedProperties;
 
         for (int i = 0; i < propListParent.transform.childCount; i++)
         {
+            propListParent.transform.GetChild(i).GetComponent<Button>().interactable = true;
             if (i <= playersTiles.Count)
             {
                 if (i == playersTiles.Count)
@@ -33,8 +38,18 @@ public class GameUIManager : MonoBehaviour
         }
     }
 
+    public void ToggleGameButtons(bool toggleTo)
+    {
+        foreach (Button button in gameButtons)
+        {
+            button.interactable = toggleTo;
+        }
+    }
+
     public void PropertySelect(int childNum)
     {
+        ToggleGameButtons(true);
+
         for (int i = 0; i < propListParent.transform.childCount; i++)
         {
             if (i == childNum)

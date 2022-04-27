@@ -1977,6 +1977,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1843152971}
   propListParent: {fileID: 1652662683}
+  gameButtons:
+  - {fileID: 1068951687}
+  - {fileID: 645571534}
+  - {fileID: 2146546565}
+  - {fileID: 906555253}
 --- !u!4 &219486282
 Transform:
   m_ObjectHideFlags: 0
