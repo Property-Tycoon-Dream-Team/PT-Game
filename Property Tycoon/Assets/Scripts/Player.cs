@@ -135,7 +135,12 @@ public class Player
     {
         cash += amt;
     }
-
+    /*
+     * Function: getCash
+     * Parameters: N/A
+     * Returns: the players amount of cash
+     * Purpose: get the players current cash amount
+     */
     public int getCash()
     {
         return cash;
