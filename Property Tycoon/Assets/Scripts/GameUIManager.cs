@@ -1,10 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour
 {
     public GameManager manager;
+    public GameObject propListParent;
+
+    public void UpdatePropertyList()
+    {
+        //manager;
+    }
+
+    public void PropertySelect(int childNum)
+    {
+        for (int i = 0; i < propListParent.transform.childCount; i++)
+        {
+            if (i == childNum)
+            {
+                propListParent.transform.GetChild(i).GetComponent<Button>().interactable = false;
+            }
+            else
+            {
+                propListParent.transform.GetChild(i).GetComponent<Button>().interactable = true;
+            }
+        }
+    }
 
     public void OnUpgradeClicked()
     {
