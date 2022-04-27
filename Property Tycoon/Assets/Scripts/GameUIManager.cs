@@ -15,9 +15,17 @@ public class GameUIManager : MonoBehaviour
 
         for (int i = 0; i < propListParent.transform.childCount; i++)
         {
-            if (i < playersTiles.Count)
+            if (i <= playersTiles.Count)
             {
-                propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = playersTiles[i].name;
+                if (i == playersTiles.Count)
+                {
+                    propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = "Current Place";
+                }
+                else
+                {
+                    propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = playersTiles[i].name;
+                }
+                
                 propListParent.transform.GetChild(i).gameObject.SetActive(true);
                 continue;
             }
@@ -37,6 +45,15 @@ public class GameUIManager : MonoBehaviour
             {
                 propListParent.transform.GetChild(i).GetComponent<Button>().interactable = true;
             }
+        }
+
+        if (childNum == playersTiles.Count)
+        {
+            manager.selectedProperty = manager.getTileObject(manager.activePlayer.gamePiece.currentTile).GetComponent<BoardTile>();
+        }
+        else
+        {
+            manager.selectedProperty = playersTiles[childNum];
         }
     }
 
