@@ -12,6 +12,7 @@ public class PropertyInfo
     public bool utility;
     public bool station;
     public bool morgaged = false;
+    public int[] rent = new int[5];
 
     /*
      * Function: checkHotel
@@ -174,7 +175,6 @@ public class PropertyInfo
     }
 
 
-
     /*
      * Function: getPC
      * Parameters: N/A
@@ -186,5 +186,4 @@ public class PropertyInfo
         // Return colour of this property
         return pc;
     }
-
 }

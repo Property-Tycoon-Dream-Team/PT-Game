@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private Player[] players;
     private int activePlayerID;
-    private Player activePlayer;
+    public Player activePlayer;
     private float timeLeft;
     private CardStack potLuckStack;
     private CardStack opportunityStack;
@@ -407,6 +407,7 @@ public class GameManager : MonoBehaviour
         activePlayer.gamePiece.movePiece(amount);
     }
 
+
     /*
      * Function: purchase
      * Parameters: N/A 
@@ -426,6 +427,7 @@ public class GameManager : MonoBehaviour
         }
         else return false; 
     }
+    
 
     /*
      * Function: upgrade
@@ -435,7 +437,7 @@ public class GameManager : MonoBehaviour
      */
     public void upgrade()
     {
-        BoardTile prop = tiles[0]; // make current tile?!
+        BoardTile prop = selectedProperty; // make current tile?!
 
         PropertyInfo pi = prop.propertyInfo;
         propColour currentpc = pi.getPC();
