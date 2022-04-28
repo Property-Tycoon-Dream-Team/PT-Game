@@ -194,9 +194,23 @@ public class GameManager : MonoBehaviour
             doubleTracker = dice.isDouble ? doubleTracker + 1 : 0;
         }
 
-        messager.NewMessage(activePlayer.playerName + " rolled: " + dice.value);
+        if (!dice.isDouble || doubleTracker >= 3)
+        {
+            UIManager.ToggleRTDButton(false);
+        }
 
-        activePlayer.gamePiece.movePiece(dice.value);
+        messager.NewMessage(activePlayer.playerName + " rolled: " + dice.value + (dice.isDouble ? " with a double!" : "!"));
+
+        if (doubleTracker >= 3)
+        {
+            activePlayer.gamePiece.movePiece(dice.value);
+            activePlayer.gamePiece.sendToJail();
+        }
+        else
+        {
+            activePlayer.gamePiece.movePiece(dice.value);
+        }
+        
         UIManager.UpdatePropertyList();
         turn();
     }
@@ -628,8 +642,6 @@ public class GameManager : MonoBehaviour
                 return false;
             }
         }
-        return false; 
-
     }
 
     /*
@@ -701,13 +713,13 @@ public class GameManager : MonoBehaviour
         {
             playerIndicator.transform.position -= new Vector3(0f, 34f, 0f);
         }
+        doubleTracker = 0;
+        UIManager.ToggleRTDButton(true);
 
         activePlayer = players[activePlayerID];
         messager.NewMessage("Now playing: " + activePlayer.playerName);
 
         UIManager.UpdatePropertyList();
-
-
     }
 
     /*

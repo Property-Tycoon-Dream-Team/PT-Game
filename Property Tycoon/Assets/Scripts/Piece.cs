@@ -47,6 +47,17 @@ public class Piece : MonoBehaviour
     }
 
     /*
+     * Function: sendToJail
+     * Parameters: N/A
+     * Returns: N/A  
+     * Purpose: Move the piece to jail. 
+     */
+    public void sendToJail()
+    {
+        //
+    }
+
+    /*
      * Function: movePiece
      * Parameters: int amount - the amount of tiles the piece should be moved. 
      * Returns: N/A  

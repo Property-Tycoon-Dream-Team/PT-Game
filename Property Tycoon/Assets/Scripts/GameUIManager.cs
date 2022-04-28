@@ -8,6 +8,7 @@ public class GameUIManager : MonoBehaviour
     public GameManager manager;
     public GameObject propListParent;
     public Button[] gameButtons;
+    public Button rtd;
 
     List<BoardTile> playersTiles;
 
@@ -44,6 +45,11 @@ public class GameUIManager : MonoBehaviour
         {
             button.interactable = toggleTo;
         }
+    }
+
+    public void ToggleRTDButton(bool toggleTo)
+    {
+        rtd.interactable = toggleTo;
     }
 
     public void PropertySelect(int childNum)
