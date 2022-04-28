@@ -198,6 +198,7 @@ public class GameManager : MonoBehaviour
 
         activePlayer.gamePiece.movePiece(dice.value);
         UIManager.UpdatePropertyList();
+        turn();
     }
 
     /*
@@ -208,7 +209,59 @@ public class GameManager : MonoBehaviour
      */
     void turn()
     {
-        //
+        int playerLocation = activePlayer.gamePiece.getCurrentTile();
+        BoardTile playerLocationTile = getBoardTileFromIndex(playerLocation);
+
+        switch (playerLocationTile.type)
+        {
+            case tileType.GO:
+                messager.NewMessage(activePlayer.playerName + "Landed On GO, Recieve £200" );
+                activePlayer.addCash(200);
+
+                break;
+            
+            case tileType.PROPERTY:
+                // Handled by player selecting buttons
+                break;
+            
+            case tileType.OPKNOCKS:
+                //card stuff
+                break;
+            
+            case tileType.POTLUCK:
+                //card stuff
+                break;
+            
+            case tileType.FREEPARK:
+                //collect moneys
+                break;
+            
+            case tileType.GOTOJAIL:
+                messager.NewMessage(activePlayer.playerName + "Sent To Jail" );
+                activePlayer.gamePiece.currentTile = (41);
+                activePlayer.gamePiece.moveHelper();
+                break;
+            
+            case tileType.JAIL:
+                if (playerLocation == 11)
+                {
+                    break;
+                }
+                else
+                {
+                    //jail stuff
+                    break;
+                }
+            case tileType.SUPERTAX:
+                messager.NewMessage(activePlayer.playerName + "Landed On Supertax, pay £100" );
+                activePlayer.addCash(-100);
+                break;
+            case tileType.INCOMETAX:
+                messager.NewMessage(activePlayer.playerName + "Landed On Incometax, pay £200" );
+                activePlayer.addCash(-200);
+                break;
+                
+        }
     }
 
     /*
