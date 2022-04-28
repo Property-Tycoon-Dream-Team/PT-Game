@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     public GameManager manager;
+    public PropertySpawner ps;
     public GameObject propListParent;
     public Button[] gameButtons;
 
