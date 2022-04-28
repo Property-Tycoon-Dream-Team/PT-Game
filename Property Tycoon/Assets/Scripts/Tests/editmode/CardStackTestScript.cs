@@ -67,12 +67,29 @@ public class CardStackTestScript
     [Test]
     public void TestShuffle()
     {
+        card1.title = "Test1";
+        card2.title = "Test2";
+        card3.title = "Test3";
+        card4.title = "Test4";
+        card5.title = "Test5";
+        card6.title = "Test6";
+        card7.title = "Test7";
+        card8.title = "Test8";
+        card9.title = "Test9";
+        card10.title = "Test10";
 
         stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
         stack2.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
 
         stack.shuffle();
+        stack2.shuffle();
 
-        Assert.AreNotEqual(stack.cards, stack2.cards);
+        for (int i = 0; i < stack.cards.Length; i++) {
+            if (stack.cards[i].title != stack2.cards[i].title)
+            {
+                Assert.AreNotEqual(stack.cards[i].title, stack2.cards[i].title);
+                break;
+            }
+        }
     }
 }
