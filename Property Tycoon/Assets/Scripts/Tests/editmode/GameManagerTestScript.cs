@@ -35,7 +35,9 @@ public class GameManagerTestScript
         Player player = new Player();
         Player player2 = new Player();
         gm.players = new Player[] { player, player2 };
-        Assert.That(gm.playersLeft() == 2);       
+        Assert.That(gm.playersLeft() == 2);
+        gm.players[0].bankrupt = true;
+        Assert.That(gm.playersLeft() == 1);
     }
 
     [Test]
