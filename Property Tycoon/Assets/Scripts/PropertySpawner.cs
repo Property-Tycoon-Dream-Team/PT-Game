@@ -11,6 +11,12 @@ public class PropertySpawner : MonoBehaviour
 
     public void UpdateProperty(int index, int propLevel)
     {
+        if (propertyObjects[index] != null)
+        {
+            Destroy(propertyObjects[index]);
+            propertyObjects[index] = null;
+        }
+
         GameObject houseToClone = prefabList.GetChild(propLevel - 1).gameObject;
 
         Vector3 adjustment = new Vector3(0f, 0f, 0f);

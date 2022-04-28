@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     public GameManager manager;
-    public PropertySpawner ps;
     public GameObject propListParent;
     public Button[] gameButtons;
 
@@ -37,6 +36,7 @@ public class GameUIManager : MonoBehaviour
             }
             propListParent.transform.GetChild(i).gameObject.SetActive(false);
         }
+        ps.UpdateProperty(1, 1);
     }
 
     public void ToggleGameButtons(bool toggleTo)
