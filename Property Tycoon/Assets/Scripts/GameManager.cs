@@ -201,6 +201,17 @@ public class GameManager : MonoBehaviour
     }
 
     /*
+     * Function: turn
+     * Parameters: N/A 
+     * Returns: N/A 
+     * Purpose: runs the main part of the game round by round
+     */
+    void turn()
+    {
+        //
+    }
+
+    /*
      * Function: getTileObject
      * Parameters: int index, the location of the tile on the board
      * Returns: GameObject instance of the board tile
@@ -294,12 +305,6 @@ public class GameManager : MonoBehaviour
         gameMenu.SetActive(true);
         // Set up board and properties
         // Set up card decks
-
-        // Starts turn looping
-        while (playersLeft() > 1 && true == false)
-        {
-            round();
-        }
 
         // End screen saying "eyyo g, you're amazing"
     }
@@ -399,17 +404,6 @@ public class GameManager : MonoBehaviour
             }
         }
         return null;
-    }
-
-    /*
-     * Function: round
-     * Parameters: N/A 
-     * Returns: N/A 
-     * Purpose: runs the main part of the game round by round
-     */
-    void round()
-    {
-        // Cycle through player list, giving them turn (DO NOT CODE)
     }
 
     /*
