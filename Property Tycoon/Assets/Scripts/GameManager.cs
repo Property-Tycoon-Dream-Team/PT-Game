@@ -272,13 +272,14 @@ public class GameManager : MonoBehaviour
                 break;
             
             case tileType.JAIL:
-                if (playerLocation == 11)
+                if (playerLocation == 10)
                 {
                     break;
                 }
                 else
                 {
                     //jail stuff
+                    messager.NewMessage(activePlayer.playerName + "is in jail!" );
                     break;
                 }
             case tileType.SUPERTAX:
@@ -392,7 +393,8 @@ public class GameManager : MonoBehaviour
         gameMenu.SetActive(true);
         // Set up board and properties
         // Set up card decks
-
+        opportunityStack.shuffle();
+        potLuckStack.shuffle();
         // End screen saying "eyyo g, you're amazing"
     }
 
@@ -519,27 +521,38 @@ public class GameManager : MonoBehaviour
      * Returns: true if the player successfully purchases the property, false if unsuccessful.
      * Purpose: purchases the property that the current player lands on
      */
-    public void purchase()
+    public bool purchase()
     {   
-        BoardTile prop = selectedProperty;
+        BoardTile bt = selectedProperty;
+
         if (activePlayer.gamePiece.getTotalTiles() < 40)
         {
-            messager.NewMessage("Cannot purchase property until you've completed one lap of the board");
+            messager.NewMessage("Cannot purchase until completed A lap of the board");
+            return false;
         }
-        if (prop.type != tileType.PROPERTY)
+        if (bt.type != tileType.PROPERTY)
         {
-            messager.NewMessage("Cannot purchase a non property tile");
+            messager.NewMessage("Cannot purchase A non-property tile");
+            return false;
         }
-
-        if (activePlayer.addToProperties(selectedProperty))
-            {
-                messager.NewMessage(activePlayer.playerName + "purchased" + prop.tileName);
-            }
+        if (activePlayer.getCash() < bt.getCost())
+        {
+            messager.NewMessage(activePlayer.playerName + " cannot afford " + bt.tileName);
+            return false;
+        }
+        if (bt.getOwner() != null && bt.getOwner() != activePlayer)
+        {
+            messager.NewMessage("Property is already owned");
+            return false;
+        }
         else
         {
-            messager.NewMessage(activePlayer.playerName + "is unable to purchase" + prop.tileName);
+            messager.NewMessage(activePlayer.playerName + " purchased " + bt.tileName);
+            activePlayer.addToProperties(bt);
+            return true;
         }
     }
+        
     
 
     /*
@@ -552,6 +565,11 @@ public class GameManager : MonoBehaviour
     {
         BoardTile bt = selectedProperty;
 
+        if (!(activePlayer.ownedProperties.Contains(bt)))
+        {
+            purchase();
+            return false;
+        }
         int count = 0;
         foreach (BoardTile property in activePlayer.ownedProperties)
         {
