@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public BoardTile[] tiles;
     public GameObject tileParent;
     public BoardTile selectedProperty;
+    public Text apl;
 
     private Player[] players;
     private int activePlayerID;
@@ -63,6 +64,11 @@ public class GameManager : MonoBehaviour
      */
     private void Update()
     {
+        if (activePlayer != null)
+        {
+            updatePlayers();
+            apl.text = "Currently on: " + getTileObject(activePlayer.gamePiece.currentTile).name;
+        }
         if (gamemode == gameType.TIMED)
         {
             timeLeft -= Time.deltaTime;
@@ -739,10 +745,15 @@ public class GameManager : MonoBehaviour
             gamemodeText.text = "Standard";
         }
 
+        updatePlayers();
+    }
+
+    private void updatePlayers()
+    {
         string playerNames = "";
         foreach (Player plyr in players)
         {
-            playerNames += plyr.playerName + "\n";
+            playerNames += plyr.playerName + " (£" + plyr.cash + ")" + "\n";
         }
         playerListText.text = playerNames;
     }
