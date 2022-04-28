@@ -3452,6 +3452,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  gm: {fileID: 0}
   move: 0
 --- !u!1 &322200077
 GameObject:
@@ -3557,7 +3558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344942681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5752, y: 4.4579, z: -3.906}
+  m_LocalPosition: {x: 0.5752, y: 4.48, z: -3.906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 877836034}
@@ -3584,6 +3585,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  gm: {fileID: 0}
   move: 0
 --- !u!1 &345536645
 GameObject:
@@ -6475,6 +6477,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  gm: {fileID: 0}
   move: 0
 --- !u!1 &543038405
 GameObject:
@@ -11383,6 +11386,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  gm: {fileID: 0}
   move: 0
 --- !u!1 &897219269
 GameObject:
@@ -17294,6 +17298,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  gm: {fileID: 0}
   move: 0
 --- !u!1 &1288783531
 GameObject:
@@ -24968,6 +24973,7 @@ MonoBehaviour:
   apl: {fileID: 945326146}
   potLuckStack: {fileID: 138801425}
   opportunityStack: {fileID: 1119388668}
+  recentCard: {fileID: 0}
 --- !u!4 &1843152972
 Transform:
   m_ObjectHideFlags: 0
@@ -28395,6 +28401,7 @@ MonoBehaviour:
   currentTile: 0
   totalTiles: 0
   speed: 2
+  gm: {fileID: 0}
   move: 0
 --- !u!1 &2066298724
 GameObject:
@@ -56557,7 +56564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4620634884037894224}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 3817326210794692379}
