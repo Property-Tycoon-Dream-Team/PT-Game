@@ -39,13 +39,22 @@ public class CardStackTestScript
     [Test]
     public void TestPopNextCard()
     {
-        stack.popNextCard();
+        stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
+        stack.activeCard = stack.popNextCard();
+        Assert.That(stack.cards[0] == card2);
+        Assert.That(stack.cards[stack.cards.Length - 1] == null);
+
+        stack.returnActiveCard();
+        stack.activeCard = stack.popNextCard();
+        Assert.That(stack.cards[0] == card3);
+        Assert.That(stack.cards[stack.cards.Length - 2] == card1);
+        Assert.That(stack.cards[stack.cards.Length - 1] == null);
     }
 
     [Test]
     public void TestRetrunActiveCard()
     {
-        stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
+        stack.cards = new Card[10] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
         stack.activeCard = stack.popNextCard();
         Assert.IsFalse(stack.returnActiveCard());
 
@@ -57,8 +66,9 @@ public class CardStackTestScript
 
     [Test]
     public void TestShuffle()
-    {   
-        stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10};
+    {
+
+        stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
         stack2.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
 
         stack.shuffle();
