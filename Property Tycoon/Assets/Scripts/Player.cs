@@ -13,6 +13,7 @@ public class Player
     public List<BoardTile> ownedProperties = new List<BoardTile>();
     public List<BoardTile> mortgagedProperties = new List<BoardTile>();
     public bool bankrupt = false;
+    public SystemMsgs messager;
 
     /*
      * Function: getBankrupt

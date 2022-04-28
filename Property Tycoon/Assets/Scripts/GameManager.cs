@@ -524,13 +524,28 @@ public class GameManager : MonoBehaviour
     */
     public bool mortgage()
     {
-        BoardTile bt = tiles[0]; // make current tile?!
+        BoardTile bt = selectedProperty;
+
+        
         if (activePlayer.addToMortgagedProperties(bt))
         {
+            messager.NewMessage(activePlayer.playerName + " Mortgaged " + bt.tileName);
             return true;
         }
-        else return false;
+        else 
+        {
+            if (!activePlayer.ownedProperties.Contains(bt))
+            {
+                messager.NewMessage("Cannot Mortgage A Property That The Player Doesn't Own.");
+            }
+            else 
+            {
+                messager.NewMessage("Property Is Already Mortgaged.");
+            }
+            return false;
+        }
     }
+
 
     /*
     * Function: unMortgage
@@ -540,12 +555,27 @@ public class GameManager : MonoBehaviour
     */
     public bool unMortgage()
     {
-        BoardTile bt = tiles[0]; // make current tile?!
+        BoardTile bt = selectedProperty;
         if (activePlayer.removeMortgage(bt))
         {
+            messager.NewMessage(activePlayer.playerName + " Unmortgaged " + bt.tileName);
             return true;
         }
-        else return false;
+        else 
+        {
+            if (activePlayer.getCash() < bt.getCost() / 2)
+            {
+                messager.NewMessage(activePlayer.playerName + " Cannot Afford To Unmortgage.");
+                return false;
+            }
+            else
+            {
+                messager.NewMessage("Property Is Not Mortgaged");
+                return false;
+            }
+        }
+        return false; 
+
     }
 
     /*
@@ -556,12 +586,17 @@ public class GameManager : MonoBehaviour
     */
     public bool sell()
     {
-        BoardTile bt = tiles[0]; // make current tile?!
+        BoardTile bt = selectedProperty;
         if (activePlayer.sellProperty(bt))
         {
+            messager.NewMessage(activePlayer.playerName +" Sold " + bt.tileName);
             return true;
         }
-        else return false;
+        else
+        {
+            messager.NewMessage(activePlayer.playerName + " Cannot Sell " + bt.tileName);
+            return false;
+        }
     }
     
     /*
@@ -638,3 +673,4 @@ public class GameManager : MonoBehaviour
         playerListText.text = playerNames;
     }
 }
+
