@@ -459,33 +459,35 @@ public class GameManager : MonoBehaviour
      * Returns: N/A 
      * Purpose: upgrades property to houses then hotels
      */
-    public void upgrade()
+    public bool upgrade()
     {
-        BoardTile prop = selectedProperty; // make current tile?!
+        BoardTile bt = selectedProperty;
 
-        propColour currentpc = prop.getPC();
         int count = 0;
-        foreach (var property in activePlayer.ownedProperties)
+        foreach (BoardTile property in activePlayer.ownedProperties)
         {
             //checking to see if player has all 3 property of the same colour before being allowed to upgrade
-            if (prop.getPC() == currentpc)
+            if (property.getPC() == bt.getPC())
             {
                 count++;
-                if (count == 3)
-                {
-                    //checking if a hotel needs to be made or a house
-                    if (!prop.checkHotel(currentpc))
-                    {
-                        int currentHouses = prop.getNumOfHouse();
-                        prop.setNumOfHouse(currentHouses + 1);
-                    }
-                    else
-                    {
-                        prop.setHotel(true);
-                    }
-                }
+            }
+            if (count == 3)
+            {
+                break;
+            }
+            else
+            {
+                messager.NewMessage(activePlayer.playerName + "Doesn't Own All Properies Of That Colour.");
+                return false;
             }
         }
+        if (bt.getNumOfHouse() == 5){
+            messager.NewMessage("Cannot Upgrade This Property Anymore.");
+            return false; 
+        }
+        bt.increaseNumOfHouse(); 
+        messager.NewMessage(activePlayer.playerName + " Upgraded Their Property.");
+        return true; 
     }
 
     /*

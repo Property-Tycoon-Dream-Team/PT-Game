@@ -73,37 +73,11 @@ public class BoardTile : MonoBehaviour
     }
 
     /*
-     * Function: checkHotel
-     * Parameters: propColour pc - the property colour to check 
-     * Returns: boolean value, whether a hotel can be  made
-     * Purpose: to check whether a hotel is eligible to be built
-     */
-    public bool checkHotel(propColour pc)
-    {
-        // Return whether this property is allowed to have hotel or not
-        int currentHouseCount = getNumOfHouse();
-
-        if (!(pc.Equals(propColour.STATION) && pc.Equals(propColour.UTILITIES)))
-        {
-            //Checks to see if there are 4 houses on the property ---> Might be the case that you would have to check to see if all 3 properties have 4 houses EACH but not specified...
-            if (currentHouseCount == 4)
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-    /*
      * Function: setHotel
      * Parameters: bool x - true or false whether or not the property has a hotel on it or not 
      * Returns: N/A
      * Purpose: to assign this property with a hotel
      */
-    public void setHotel(bool x)
-    {
-        hotel = x;
-    }
 
     /*
      * Function: getNumOfHouse
@@ -123,10 +97,10 @@ public class BoardTile : MonoBehaviour
      * Returns: N/A
      * Purpose: sets the num of houses on this property
      */
-    public void setNumOfHouse(int houses)
+    public void increaseNumOfHouse()
     {
-        // Set num of houses of this property
-        numOfHouse = houses;
+        
+        numOfHouse++;
     }
 
     /*
