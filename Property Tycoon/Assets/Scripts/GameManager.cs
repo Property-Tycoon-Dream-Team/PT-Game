@@ -433,7 +433,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 players[players.Length - 1] = new Player();
-                players[players.Length - 1].playerName = "Bossman (AI Banker)";
+                players[players.Length - 1].playerName = "[AI]Banker";
                 players[players.Length - 1].ai = true;
 
                 Piece assignedPiece = findSparePiece();
