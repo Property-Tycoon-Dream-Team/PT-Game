@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int freeParkingValue;
     public GameObject mainMenu;
     public GameUIManager UIManager;
+    public PropertySpawner propSpawner;
 
     public GameObject gameMenu;
     public Transform playerIndicator;
@@ -564,7 +565,16 @@ public class GameManager : MonoBehaviour
             messager.NewMessage("Cannot Upgrade This Property Anymore.");
             return false; 
         }
-        bt.increaseNumOfHouse(); 
+        bt.increaseNumOfHouse();
+
+        for (int i = 0; i < tileParent.transform.childCount; i++)
+        {
+            if (selectedProperty == tileParent.transform.GetChild(i).gameObject.GetComponent<BoardTile>())
+            {
+                propSpawner.UpdateProperty(i, selectedProperty.numOfHouse);
+            }
+        }
+
         messager.NewMessage(activePlayer.playerName + " Upgraded Their Property.");
         return true; 
     }

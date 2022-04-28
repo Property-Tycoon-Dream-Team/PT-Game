@@ -23353,6 +23353,7 @@ MonoBehaviour:
   freeParkingValue: 0
   mainMenu: {fileID: 2066298724}
   UIManager: {fileID: 219486281}
+  propSpawner: {fileID: 844072331}
   gameMenu: {fileID: 210395306}
   playerIndicator: {fileID: 503381731}
   timerText: {fileID: 266239973}
