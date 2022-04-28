@@ -18,24 +18,28 @@ public class GameUIManager : MonoBehaviour
 
         playersTiles = manager.activePlayer.ownedProperties;
 
+        tileType currentTileType = manager.getTileObject(manager.activePlayer.gamePiece.currentTile).GetComponent<BoardTile>().type;
+
         for (int i = 0; i < propListParent.transform.childCount; i++)
         {
             propListParent.transform.GetChild(i).GetComponent<Button>().interactable = true;
+            propListParent.transform.GetChild(i).gameObject.SetActive(false);
             if (i <= playersTiles.Count)
             {
                 if (i == playersTiles.Count)
                 {
-                    propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = "Current Place";
+                    if (currentTileType == tileType.PROPERTY)
+                    {
+                        propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = "Current Place";
+                        propListParent.transform.GetChild(i).gameObject.SetActive(true);
+                    }
                 }
                 else
                 {
                     propListParent.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = playersTiles[i].name;
+                    propListParent.transform.GetChild(i).gameObject.SetActive(true);
                 }
-                
-                propListParent.transform.GetChild(i).gameObject.SetActive(true);
-                continue;
             }
-            propListParent.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
