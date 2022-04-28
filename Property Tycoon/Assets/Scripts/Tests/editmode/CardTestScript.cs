@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Playables;
+using NUnit.Framework;
 
-[System.Serializable]
-public class CardTestScript : PlayableAsset
+public class CardTestScript
 {
-    // Factory method that generates a playable based on this asset
-    public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
+    [Test]
+    public void TestAction()
     {
-        return Playable.Create(graph);
+
     }
 }
