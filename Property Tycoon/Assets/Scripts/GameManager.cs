@@ -445,6 +445,14 @@ public class GameManager : MonoBehaviour
         }
         activePlayerID = 0;
         activePlayer = players[activePlayerID];
+
+        foreach (Piece pce in pieces)
+        {
+            if (!pce.chosen)
+            {
+                pce.gameObject.SetActive(false);
+            }
+        }
         
         UIManager.UpdatePropertyList();
 
