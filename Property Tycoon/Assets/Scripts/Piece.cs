@@ -11,7 +11,7 @@ public class Piece : MonoBehaviour
     public int currentTile = 0;
     public int totalTiles = 0;
     public float speed;
-    private GameManager gm;
+    public GameManager gm;
     public bool move = false;
 
     /*

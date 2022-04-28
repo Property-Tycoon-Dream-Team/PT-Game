@@ -5,57 +5,54 @@ using UnityEngine;
 using UnityEngine.TestTools;
 
 
-namespace Tests
+public class PieceTestScript
 {
-    public class PieceTestScript
+
+    private Piece piece;
+
+    [SetUp]
+    public void SetUp()
     {
+        piece = new Piece();
+    }
 
-        private Piece piece;
+    [Test]
+    public void TestMoveHelper()
+    {
+        piece.movePiece(4);
+        piece.moveHelper();
+        Assert.AreEqual(piece.getCurrentTile(), piece.target);
+    }
 
-        [SetUp]
-        public void SetUp()
-        {
-            piece = new Piece();
-        }
+    [Test]
+    public void TestMovePiece()
+    {
+        int amount = 4;
+        int tt = piece.totalTiles;
 
-        [Test]
-        public void TestMoveHelper()
-        {
-            
-        }
-       
-        [Test]
-        public void TestMovePiece()
-        {           
-            int amount = 4;
-            int tt = piece.totalTiles;
+        piece.movePiece(amount);
 
-            piece.movePiece(amount);
+        Assert.That(piece.totalTiles == (tt + amount));
+        Assert.That(piece.currentTile == (piece.totalTiles % 40 + 40) % 40);
+        Assert.IsTrue(piece.move);
 
-            Assert.That(piece.totalTiles == (tt + amount));
-            Assert.That(piece.currentTile == (piece.totalTiles % 40 + 40) % 40);
-            Assert.IsTrue(piece.move);
-            
-        }
+    } 
+    
+    [Test]
+    public void TestGetCurrentTile()
+    {
+        int amount = 10;
+        piece.movePiece(amount);
+        Assert.That(piece.getCurrentTile() == (piece.totalTiles % 40 + 40) % 40);
+    }
 
-        [Test]
-        public void TestGetCurrentTile()
-        {
-            int amount = 10;
-            piece.movePiece(amount);
+    [Test]
+    public void TestGetTotalTiles()
+{
+        int amount = 5;
+        int tt = piece.totalTiles;
 
-            Assert.That(piece.getCurrentTile() == (piece.totalTiles % 40 + 40) % 40);
-        }
-
-        [Test]
-        public void TestGetTotalTiles()
-        {
-            int amount = 5;
-            int tt = piece.totalTiles;
-
-            piece.movePiece(amount);
-
-            Assert.That(piece.getTotalTiles() == (tt + amount));
-        }
+        piece.movePiece(amount);
+        Assert.That(piece.getTotalTiles() == (tt + amount));
     }
 }
