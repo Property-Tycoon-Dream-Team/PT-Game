@@ -264,6 +264,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void addToFreeParking(int amount)
+    {
+        freeParkingValue += amount; 
+    } 
+
     /*
      * Function: getTileObject
      * Parameters: int index, the location of the tile on the board

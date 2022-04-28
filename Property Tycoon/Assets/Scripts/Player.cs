@@ -8,7 +8,7 @@ public class Player
     public string playerName;
     public bool ai;
     public bool jailed;
-    int jailCards;
+    public int jailCards;
     public int cash;
     public List<BoardTile> ownedProperties = new List<BoardTile>();
     public List<BoardTile> mortgagedProperties = new List<BoardTile>();
