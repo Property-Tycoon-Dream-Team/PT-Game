@@ -36,7 +36,7 @@ public class BoardTileTestScript
     }
 
     [Test]
-    public void TestGetOwner()
+    public void TestSetOwner()
     {
         Player player = new Player();
         tile.setOwner(player);
@@ -44,7 +44,7 @@ public class BoardTileTestScript
     }
 
     [Test]
-    public void TestSetOwner()
+    public void TestGetOwner()
     {
         Player player = new Player();
         tile.setOwner(player);
@@ -60,45 +60,20 @@ public class BoardTileTestScript
         Assert.That(tile.owner == null);
     }
 
-    [Test]
-    public void TestCheckHotel()
+    [Test] 
+    public void TestIncreaseNumOfHouses()
     {
-        tile.setNumOfHouse(4);
-        tile.pc = propColour.GREEN;
-        Assert.IsTrue(tile.checkHotel(propColour.GREEN));
-
-        tile.setNumOfHouse(0);
-        tile.pc = propColour.STATION;
-        Assert.IsFalse(tile.checkHotel(propColour.STATION));
-
-        tile.setNumOfHouse(0);
-        tile.pc = propColour.UTILITIES;
-        Assert.IsFalse(tile.checkHotel(propColour.UTILITIES));
-
-        tile.setNumOfHouse(2);
-        tile.pc = propColour.BROWN;
-        Assert.IsFalse(tile.checkHotel(propColour.BROWN));
-    }
-
-    [Test]
-    public void TestSetHotes()
-    {
-        tile.setHotel(true);
-        Assert.That(tile.hotel == true);
-    }
-
-    [Test]
-    public void TestGetNumOfHouses()
-    {
-        tile.setNumOfHouse(4);
-        Assert.That(tile.getNumOfHouse() == 4);
-    }
-
-    [Test]
-    public void TestSetNumOfHouses()
-    {
-        tile.setNumOfHouse(2);
+        tile.numOfHouse = 1;
+        tile.increaseNumOfHouse();
         Assert.That(tile.numOfHouse == 2);
+    }
+
+    [Test]
+    public void TestDecreaseNumOfHouses()
+    {
+        tile.numOfHouse = 1;
+        tile.decreaseNumOfHouse();
+        Assert.That(tile.numOfHouse == 0);
     }
 
     [Test]
