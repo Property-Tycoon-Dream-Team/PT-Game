@@ -40,6 +40,16 @@ public class PlayerTestScript
     }
 
     [Test]
+    public void TestGetCash()
+    {
+        player.cash = 0;
+        player.addCash(500);
+        Assert.That(player.getCash() >= 500);
+        player.addCash(500);
+        Assert.That(player.getCash() >= 500);
+    }
+
+    [Test]
     public void TestAddToProperties()
     {
         tile.cost = 500;
