@@ -19,20 +19,20 @@ public class BoardTileTestScript
     public void TestGetTileName()
     {
         tile.tileName = "Test";
-        Assert.AreEqual("Test", tile.tileName);
+        Assert.AreEqual("Test", tile.getTileName());
     }
 
     [Test]
     public void TestGetCost()
     {
         tile.cost = 0;
-        Assert.That(tile.cost == 0);
+        Assert.That(tile.getCost() == 0);
 
         tile.cost = 500;
-        Assert.That(tile.cost == 500);
+        Assert.That(tile.getCost() == 500);
 
         tile.cost = 1000;
-        Assert.That(tile.cost == 1000);
+        Assert.That(tile.getCost() == 1000);
     }
 
     [Test]
@@ -54,10 +54,10 @@ public class BoardTileTestScript
     [Test]
     public void TestRemoveOwner()
     {
-        Player owner = new Player();
-        tile.setOwner(owner);
+        Player player = new Player();
+        tile.setOwner(player);
         tile.removeOwner();
-        Assert.That(tile.owner == null);
+        Assert.That(tile.getOwner() == null);
     }
 
     [Test] 
@@ -80,9 +80,9 @@ public class BoardTileTestScript
     public void TestChangeMortgageStatus()
     {
         tile.changeMortgageStatus();
-        Assert.That(tile.mortgaged == true);
+        Assert.IsTrue(tile.mortgaged);
         tile.changeMortgageStatus();
-        Assert.That(tile.mortgaged == false);
+        Assert.IsFalse(tile.mortgaged);
     }
 
     [Test]
