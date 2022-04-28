@@ -49,7 +49,6 @@ public class CardStackTestScript
         stack.activeCard = stack.popNextCard();
         Assert.IsFalse(stack.returnActiveCard());
 
-
         stack.activeCard = stack.popNextCard();
         stack.activeCard.isActionComplete = true;
         Assert.IsTrue(stack.returnActiveCard());
@@ -59,7 +58,7 @@ public class CardStackTestScript
     [Test]
     public void TestShuffle()
     {   
-        stack.cards = new Card[] {card1, card2, card3, card4, card5, card6, card7, card8, card9, card10};
+        stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10};
         stack2.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
 
         stack.shuffle();
