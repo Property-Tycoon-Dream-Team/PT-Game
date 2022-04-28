@@ -203,7 +203,6 @@ public class GameManager : MonoBehaviour
 
         if (doubleTracker >= 3)
         {
-            activePlayer.gamePiece.movePiece(dice.value);
             activePlayer.gamePiece.sendToJail();
         }
         else
