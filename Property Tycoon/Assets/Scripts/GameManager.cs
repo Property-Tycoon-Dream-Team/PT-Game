@@ -607,7 +607,7 @@ public class GameManager : MonoBehaviour
     * Returns: a bool value, if the player succesfully sells the property. 
     * Purpose: calls the sellProperty for the active player. 
     */
-    public void rent()
+    public bool rent()
     {
         int rentTile = activePlayer.gamePiece.getCurrentTile();
         BoardTile rentT = getBoardTileFromIndex(rentTile);
@@ -617,7 +617,16 @@ public class GameManager : MonoBehaviour
         if (activePlayer.getCash() >= amount)
         {
             activePlayer.addCash(-(amount));
+            messager.NewMessage(amount + " Removed From " + activePlayer.playerName + "'s Cash Pile + L + No Maddiens + Ratio");
+            return true; 
         }
+
+        else
+        {
+            messager.NewMessage(activePlayer.playerName + "Cannot Afford To Pay Rent.");
+            return false; 
+        }
+
 
 
         //else - gotta sell properties n morgage etc etc. 

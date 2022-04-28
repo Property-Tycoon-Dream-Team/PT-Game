@@ -104,6 +104,18 @@ public class BoardTile : MonoBehaviour
     }
 
     /*
+     * Function: setNumOfHouse
+     * Parameters: int houses - the new number of houses
+     * Returns: N/A
+     * Purpose: sets the num of houses on this property
+     */
+    public void decreaseNumOfHouse()
+    {
+        
+        numOfHouse--;
+    }
+
+    /*
      * Function: mortgage
      * Parameters: N/A
      * Returns: N/A
