@@ -12,14 +12,15 @@ public class Card : MonoBehaviour
     public bool freepark; 
     public bool jailFree; 
     public bool jail; 
+    public bool bday;
     public bool go;
 
     public void completeAction(Player p, Player b)
     {   
         if (freepark)
         {
-            manager.addToFreeParking(amount);
-            p.addCash(-amount);
+            manager.addToFreeParking(-(amount));
+            p.addCash(amount);
         }
         else 
         {
@@ -52,6 +53,15 @@ public class Card : MonoBehaviour
                 p.gamePiece.currentTile = 0;
                 p.gamePiece.moveHelper();
                 p.addCash(200);
+            }
+
+            if (bday)
+            {
+                foreach (Player a in manager.players)
+                {
+                    a.addCash(10);
+                }
+                p.addCash(-(manager.players.Length) * 10);
             }
         }
     }

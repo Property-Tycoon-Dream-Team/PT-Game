@@ -37,12 +37,13 @@ public class GameManager : MonoBehaviour
     public BoardTile selectedProperty;
     public Text apl;
 
-    private Player[] players;
+    public CardStack potLuckStack;
+    public CardStack opportunityStack;
+    public Card recentCard; 
+    public Player[] players;
     private int activePlayerID;
     public Player activePlayer;
     private float timeLeft;
-    private CardStack potLuckStack;
-    private CardStack opportunityStack;
     private int doubleTracker = 0;
     private gameType gamemode;
 
@@ -246,10 +247,18 @@ public class GameManager : MonoBehaviour
             
             case tileType.OPKNOCKS:
                 //card stuff
+                recentCard = opportunityStack.popNextCard();
+                messager.NewMessage(recentCard.title);
+                // active player and banker
+                recentCard.completeAction(activePlayer, players[players.Length - 1]);
                 break;
             
             case tileType.POTLUCK:
                 //card stuff
+                recentCard = potLuckStack.popNextCard();
+                messager.NewMessage(recentCard.title);
+                // active player and banker
+                recentCard.completeAction(activePlayer, players[players.Length - 1]);
                 break;
             
             case tileType.FREEPARK:

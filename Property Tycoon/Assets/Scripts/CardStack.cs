@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardStack
+public class CardStack : MonoBehaviour
 {
     public Card[] cards;
     public Card activeCard;
@@ -19,6 +19,7 @@ public class CardStack
     {
         // Give next card (in higher logic set Player jailCard++ if is jail card)
 
+    
         // Stores popped card in a temporary state until its action has been completed
        activeCard = cards[0];
 
@@ -74,4 +75,5 @@ public class CardStack
             cards[randomNumber2] = temp;
         }   
     }
+
 }
