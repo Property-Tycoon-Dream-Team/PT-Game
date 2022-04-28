@@ -12,7 +12,7 @@ public class PiecePlaymodeTestScript
         var go = new GameObject();
         var piece = go.AddComponent<Piece>();
 
-        piece.move = true; ;
+        piece.movePiece(4);
         piece.moveHelper();
 
         yield return new WaitForSecondsRealtime(5);
