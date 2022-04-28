@@ -45,15 +45,14 @@ public class CardStackTestScript
     [Test]
     public void TestRetrunActiveCard()
     {
-        stack.activeCard = null;
         stack.cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10 };
-        stack.popNextCard();
-        stack.activeCard.isActionComplete = false;
+        stack.activeCard = stack.popNextCard();
         Assert.IsFalse(stack.returnActiveCard());
 
+
+        stack.activeCard = stack.popNextCard();
         stack.activeCard.isActionComplete = true;
         Assert.IsTrue(stack.returnActiveCard());
-        Assert.That(stack.activeCard.isActionComplete == false);
         Assert.Null(stack.activeCard);
     }
 
