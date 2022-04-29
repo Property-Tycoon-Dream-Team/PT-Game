@@ -84,13 +84,11 @@ public class GameUIManager : MonoBehaviour
 
     public void OnUpgradeClicked()
     {
-        Debug.Log("yo");
         manager.upgrade();
     }
 
     public void OnMortgageClicked()
     {
-        Debug.Log("yo1");
         manager.mortgage();
     }
 

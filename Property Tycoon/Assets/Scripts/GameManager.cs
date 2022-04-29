@@ -264,7 +264,9 @@ public class GameManager : MonoBehaviour
                 break;
             
             case tileType.FREEPARK:
-                //collect moneys
+                activePlayer.addCash(freeParkingValue);
+                messager.NewMessage(activePlayer.playerName + "collected " + freeParkingValue + "from freeparking!" );
+                freeParkingValue = 0;
                 break;
             
             case tileType.GOTOJAIL:
@@ -293,6 +295,11 @@ public class GameManager : MonoBehaviour
                 activePlayer.addCash(-200);
                 break;
                 
+        }
+
+        if (activePlayer.getCash() < 1)
+        {
+            activePlayer.bankrupt = true;
         }
     }
 
@@ -813,6 +820,20 @@ public class GameManager : MonoBehaviour
         endTurn();
         }
 
+        //remove bankrupt player
+        if(activePlayer.bankrupt)
+        {   
+            //activePlayer.gamePiece.gameObject.SetActive(false);
+            List<Player> tmp = new List<Player>(players);
+            tmp.RemoveAt(activePlayerID);
+            players = tmp.ToArray();
+
+
+        }
+        if(playersLeft() == 1)
+        {
+            messager.NewMessage(players[0].playerName + "won the game!");
+        }
         UIManager.UpdatePropertyList();
     }
 
