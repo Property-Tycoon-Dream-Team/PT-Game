@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public CardStack opportunityStack;
     public Card recentCard; 
     public Player[] players;
+    public Player bankerAI;
+    public System.Random rand = new System.Random();
     private int activePlayerID;
     public Player activePlayer;
     private float timeLeft;
@@ -195,7 +197,7 @@ public class GameManager : MonoBehaviour
      * Purpose: used to generate random dice roll and track number of doubles rolled
      */
     public void rollDice(bool track)
-    {
+    {   
         Dice dice = new Dice();
         if (track)
         {
@@ -250,7 +252,7 @@ public class GameManager : MonoBehaviour
                 recentCard = opportunityStack.popNextCard();
                 messager.NewMessage(recentCard.title);
                 // active player and banker
-                recentCard.completeAction(activePlayer, players[players.Length - 1]);
+                recentCard.completeAction(activePlayer, bankerAI);
                 break;
             
             case tileType.POTLUCK:
@@ -258,7 +260,7 @@ public class GameManager : MonoBehaviour
                 recentCard = potLuckStack.popNextCard();
                 messager.NewMessage(recentCard.title);
                 // active player and banker
-                recentCard.completeAction(activePlayer, players[players.Length - 1]);
+                recentCard.completeAction(activePlayer, bankerAI);
                 break;
             
             case tileType.FREEPARK:
@@ -446,7 +448,7 @@ public class GameManager : MonoBehaviour
             {
                 players[players.Length - 1] = new Player();
                 players[players.Length - 1].playerName = "[AI]Banker";
-                players[players.Length - 1].ai = true;
+                bankerAI = players[players.Length - 1]; 
 
                 Piece assignedPiece = findSparePiece();
                 assignedPiece.chosen = true;
@@ -768,6 +770,48 @@ public class GameManager : MonoBehaviour
 
         activePlayer = players[activePlayerID];
         messager.NewMessage("Now playing: " + activePlayer.playerName);
+
+        // basic banker AI 
+        if(activePlayer == bankerAI)
+        {
+            float chanceOfButtonPress = 0.7f;
+            float randF1 = (float)rand.NextDouble();
+            //auto roll dice
+            rollDice(true);
+            selectedProperty = getBoardTileFromIndex(activePlayer.gamePiece.getCurrentTile());
+            // 70% chance of attempting to purchase current property
+            if(chanceOfButtonPress > randF1)
+            {
+                purchase();
+            }
+            // if the AI's money is less than 300 then 50% to mortgage a random property
+            float randF2 = (float)rand.NextDouble();
+            if (activePlayer.getCash() < 300)
+            {
+                if((chanceOfButtonPress - 0.2f) > randF2);
+                    int randI = rand.Next(activePlayer.ownedProperties.Count);
+                    selectedProperty = activePlayer.ownedProperties[randI];
+                    mortgage();
+            }
+            // if the AI has a property mortgaged but has over 500 then 30% to unmortgage a property
+            if ((activePlayer.getCash() > 500) && (activePlayer.mortgagedProperties.Count > 0))
+            {
+                if((chanceOfButtonPress - 0.4f)> randF2);
+                    int randI = rand.Next(activePlayer.mortgagedProperties.Count);
+                    selectedProperty = activePlayer.mortgagedProperties[randI];
+                    unMortgage();
+            }
+
+            // if the AI's money is less than 100 then 70% to sell a random property if all properties are mortgaged
+            if ((activePlayer.getCash() < 100) && (activePlayer.ownedProperties.Count < 1) && (activePlayer.mortgagedProperties.Count > 0))
+            {
+                if(chanceOfButtonPress > randF2);
+                    int randI = rand.Next(activePlayer.mortgagedProperties.Count);
+                    selectedProperty = activePlayer.mortgagedProperties[randI];
+                    sell();
+            }
+        endTurn();
+        }
 
         UIManager.UpdatePropertyList();
     }
